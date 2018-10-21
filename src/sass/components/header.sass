@@ -1,0 +1,21 @@
+.header
+   $parent: &
+   padding: 10px 0
+   &__container
+      display: flex
+      align-items: center
+      justify-content: space-between
+   &__logo
+      flex: 0 0 107px
+      
+   &__nav
+   &__contact
+      display: flex
+      flex-direction: column
+      &-tel
+         margin-bottom: 2px
+         +f('pn800', 18, 22)
+         color: #000
+      &-link
+         +f('pn600', 12, 15)
+         color: #E21C21

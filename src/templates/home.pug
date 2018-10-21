@@ -1,0 +1,273 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Главная'
+
+block content
+
+	//begin main
+	main.main
+
+		//begin screen
+		+b.SECTION.screen
+			+e.content.has-bg._1(style=`background-image: url(img/bg/screen_bg.jpg)`)
+				+e.container.container
+					+sectTitle('_lg _color-1 screen__title', 'Законное взыскание долгов с юридических лиц с оплатой по факту зачисления на ваш счет', 'Для тех, кому нужны гарантии, а не юрист в штате', true)
+					+btn('screen__btn', 'БЕСПЛАТНЫЙ АНАЛИЗ ВАШЕГО ДЕЛА')
+
+			+b.benefits.screen__benefits
+				+e.row.row
+					+e.item
+						+b.diamond-shape
+							+e.title 2
+								+e.SPAN.title-descr МЕСЯЦА
+						+e.P Средний срок возврата долга нашим клиентам
+					+e.item
+						+b.diamond-shape
+							+e.title %
+						+e.P Оплату (% от иска) мы получаем только после исполнения иска и зачисления средств на ваш счет
+					+e.item
+						+e.item-shape
+						+b.diamond-shape
+							+e.icon._rubl: +i('rubl')
+						+e.P Стоимость наших услуг всегда включена в сумму иска
+		//end screen
+			
+		//begin solutions
+		+b.SECTION.solutions
+			+e.container.container
+				+sectTitle('_color-1 solutions__title', 'Найдите себя', 'Самые популярные проблемы малого и среднего бизнеса')
+				-
+					solutionsList = [
+					'Выполнили поставку товара, но не можете получить оплату?',
+					'Контрагент отказывается платить за выполненные услуги?',
+					'Контрагент затягивает оплату под прелогом «сейчас нет денег»?',
+					'Вы подали в суд самостоятельно, но не знаете что делать дальше?',
+					'Вы выиграли суд, но денег на счет так и не получили?',
+					'Контрагент объявил себя банкротом?']
+				for text in solutionsList
+					+e.item
+						+e.P.item-question= text
+						+e.A.item-link(href='#!') Есть решение →
+		//end solutions
+			
+		//begin advantages
+		+b.SECTION.advantages.has-bg._2(style=`background-image: url(img/bg/advantages_bg.jpg)`)
+			+e.container.container
+				+sectTitle('_color-2 solutions__title', '5 причин сотрудничать с ЮРКОН', 'факты, отличающие нас от 90% конкурентов')
+				+e.row.row
+					-
+						advantagesList = [{
+						title: '75%',
+						descr: 'Вероятность того что ваше дело не дойдет до суда и вы получите выплату уже после досудебной претензии'
+						}, {
+						title: '90%',
+						descr: 'Если дело дойдет до суда, в среднем 90% наших услуг оплачивает компания-должник'
+						}, {
+						title: '0%',
+						descr: 'Без предоплаты. Вы платите только после зачисления средств на счет - реальная гарантия'
+						}, {
+						icon: 'whatsapp',
+						descr: 'Никаких менеджеров, только прямое общение с юристом по телефону, почте или whatsapp'
+						}, {
+						icon: 'coin-purse',
+						descr: 'Так как наша оплата это процент от суммы долга, то мы заинтересованы в максимально крупном и быстром возврате средств'
+						}]
+					mixin advantagesItem(item)
+						+e.item
+							if item.icon
+								+e.item-icon: +i(`${item.icon}`)
+							if item.title
+								+e.item-title= item.title
+							+e.P.item-descr= item.descr
+					each item in advantagesList
+						+advantagesItem(item)
+		//end advantages
+			
+		//begin assess
+		+b.SECTION.assess
+			+e.container.container
+				+sectTitle('_color-1 assess__title', 'Узнайте, сможем ли мы взять ваше дело', 'Мы беремся только за 40% предлагаемых нам дел, так как мы предоставляем реальную гарантию, а не просто пишем о ней на сайте.')
+				+e.content
+					+e.H3.content-title Заполните форму ниже максимально подробно и узнайте, смогут ли наши юристы помочь вам
+					+e.FORM.form.js-form(action='#!' method='POST')
+						+e.form-block
+							+e.H5.form-block-title 1. Укажите детали вашего дела
+							+b.form-field._has-label.assess__form-field
+								+e.LABEL.label
+									+e.SPAN.label-descr Сумма задолженности
+									+e.INPUT.input(type='text' name='')
+									+e.SPAN: +i('rubl-2')
+							+b.form-field._has-label.assess__form-field
+								+e.LABEL.label
+									+e.SPAN.label-descr Срок задолженности
+									+e.INPUT.input(type='text' name='')
+									+e.SPAN месяцев
+
+
+						+e.form-block._width-1
+							+e.H5.form-block-title 2. На каком основании требуется задолженность?
+							+e.form-block-row
+								+e.form-block-col
+									+checkBox('_radio assess__form-check-box', 'Договор поставки', false, true)(name='radio-1')
+									+checkBox('_radio assess__form-check-box', 'Договор оказания услуг', false, true)(name='radio-1')
+									+checkBox('_radio assess__form-check-box', 'Договор подряда', false, true)(name='radio-1')
+								+e.form-block-col
+									+checkBox('_radio assess__form-check-box', 'Договор аренды', false, true)(name='radio-1')
+									+checkBox('_radio assess__form-check-box', 'Гос. контакт', false, true)(name='radio-1')
+									.check-box.check-box_radio.check-box_has-field.assess__form-check-box
+										label.check-box__label
+											input.check-box__input(type='radio', name='radio-1')
+											.check-box__visual
+											.check-box__input-wrap
+												span.check-box__input-text Другое:
+												input.check-box__field-input.is-disabled(type='text' name='' placeholder='' readonly)
+
+						+e.form-block._width-2
+							+e.H5.form-block-title 3. На какой стадии находится иск?
+							+e.form-block-row
+								+e.form-block-col
+									+checkBox('_radio assess__form-check-box', 'Досудебная (ведутся переговоры)', false, true)(name='radio-2')
+									+checkBox('_radio assess__form-check-box', 'Судебная (подан иск)', false, true)(name='radio-2')
+								+e.form-block-col
+									+checkBox('_radio assess__form-check-box', 'Есть решение суда', false, true)(name='radio-2')
+									.check-box.check-box_radio.check-box_has-field.assess__form-check-box
+										label.check-box__label
+											input.check-box__input(type='radio', name='radio-2')
+											.check-box__visual
+											.check-box__input-wrap
+												span.check-box__input-text Другое:
+												input.check-box__field-input.is-disabled(type='text' name='' placeholder='' readonly)
+
+						+e.form-block._width-3
+							+e.H5.form-block-title 4. ИНН вашего должника (если есть)
+							+formField('ask__form-field', 'Введите ИНН')
+						+e.form-block._width-3
+							+e.H5.form-block-title 5. Укажите ваши контактные данные:
+							+formField('ask__form-field', 'Введите ваше имя')
+							+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
+							+formField('ask__form-field', 'Введите вашу почту')(type='email')
+						+e.form-actions._width-3
+							+btn('assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
+							+checkBox('assess__form-check', 'Вы соглашаетесь с условиями обработки персональных данных и', ' политикой конфиденциальности')
+
+					+e.result
+						+e.result-inner
+							+e.result-header
+								+e.result-title Стоимость наших услуг составит:
+								+e.SPAN.result-price.title-sm._red 25 000 руб
+							+e.result-text
+								+e.result-text-price 15 000 руб
+								+e.result-text-descr в течение 5 дней с момента вступления в силу решения суда
+							+e.result-text
+								+e.result-text-price 10 000 руб
+								+e.result-text-descr в течение 5 дней с момента поступления средств на ваш счет
+
+		//end assess
+
+		//begin about
+		+b.SECTION.about
+			+e.container.container
+				+sectTitle('_color-1 about__title', 'О компании')
+				+e.text
+					+e.P.text-descr._top Благодаря более чем 15-летнему опыту юридического сопровождения малых и средних торговых и производственных компаний по вопросам взыскания задолженностей, «ЮРКОН» может предложить по-настоящему качественные услуги по защите интересов своих клиентов
+					+e.BLOCKQUOTE.text-quote Для взыскания задолженностей мы используем исключительно законные методы, взаимодействуя с судом и со службой судебных приставов
+						+i('quote', 'about__text-quote-icon')
+					+e.P.text-descr Наши услуги включают в себя как ведение переговоров на досудебной стадии, так и работу со службой судебных приставов - с целью реального исполнения решения суда и поступления средств на ваш счет
+				+e.row.row
+					-
+						aboutItem = [
+						['15', 'Стаж наших юристов более 15 лет'],
+						['B2B', 'Строго для бизнеса'],
+						['10', 'Опытных юристов, специализирующихся на вопросах взыскания задолженности']]
+					for text in aboutItem
+						+e.item
+							+b.diamond-shape.about__item-diamond
+								+e.title= text[0]
+							+e.P.item-descr= text[1]
+		//end about
+			
+		//begin why-us
+		+b.SECTION.why-us.has-bg._3(style=`background-image: url(img/bg/why-us_bg.jpg)`)
+			+e.container.container
+				+sectTitle('_color-2 why-us__title', 'ПОЧЕМУ ТАК ВАЖНО РАБОТАТЬ ИСКЛЮЧИТЕЛЬНО С ПРОФЕССИОНАЛАМИ')
+				+e.row.row
+					-
+						whyUsList = [{
+						icon: 'scales',
+						title: 'Потеря задолженности',
+						descr: 'Если неграмотный юрист допустит ошибку и проиграет дело, то все что вам останется это - надежда на апелляцию'
+						}, {
+						icon: 'sand-clock',
+						title: 'Потеря времени',
+						descr: 'Если сильно затянуть процесс, то должник успеет избавить от имущества и сделать компанию банкротом'
+						}, {
+						icon: 'coins',
+						title: 'Потеря денег',
+						descr: 'Неопытный юрист может плохо рассчитать штрафы, пени за упущенную выгоду, судебные и другие расходы, или не включить их вовсе.'
+						}]
+					mixin whyUsItem(item)
+						+e.item
+							+e.item-icon
+								+i(`${item.icon}`)
+							+e.H5.item-title= item.title
+							+e.P.item-descr= item.descr
+					each item in whyUsList
+						+whyUsItem(item)
+		//end why-us
+			
+		//begin service
+		+b.SECTION.service
+			+e.container.container
+				+sectTitle('_color-1 service__title', 'контрагенты часто задерживают оплату?', 'абонентское юридическое обслуживание')
+				+e.row.row
+					+e.text
+						+e.P.descr Услуги юридического аутсорсинга - предназначена для компаний малого и среднего сегмента бизнеса, у которых слишком часто возникают юридический споры с контрагентами.
+						+e.list
+							+e.H4.list-title В услугу входит:
+							+e.UL.list-body
+								li Неограниченное количество проверок и составления договоров
+								li Информирование о платежеспособности контрагентов
+								li Неограниченное количество консультаций, составления претензий и исков
+								li Представительство в арбитражных судах на всех стадиях процесса
+								li Ведение исполнительного производства и частичного документооборота
+					+e.form-wrap
+						+e.FORM(action='#!' method='POST')
+							+e.head-text
+								+e.form-title.title-sm._red от 15000 руб/месяц
+								+e.P.form-descr Оставьте заявку и рассчитайте стоимость вашего обслуживания
+
+							+formField('service__form-field', 'Введите ваше имя')
+							+formField('service__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')
+							+e.form-actions
+								+btn('service__form-submit', 'УЗНАТЬ СТОИМОСТЬ')(type='submit')
+								+checkBox('service__form-check', 'Вы соглашаетесь с условиями обработки персональных данных и', ' политикой конфиденциальности')
+		//end service
+
+		//begin ask
+		+b.SECTION.ask
+			+e.container.container
+				+sectTitle('_color-1 ask__title', 'Остались вопросы?')
+				+e.P.descr Звоните по телефону
+					+e.A.descr-link(href='#!') +7 (495) 461-0-461
+					=	' '
+					| или задайте ваш вопрос в форме ниже
+
+				+e.FORM.form(action='#!' method='POST')
+					+e.row.row
+						+e.col
+							+formField('ask__form-field', 'Введите ваше имя')
+							+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')
+							+formField('ask__form-field', 'Введите вашу почту')
+						+e.col
+							+formField('ask__form-field', 'Опишите вашу проблему', false, true)
+
+					+e.form-actions
+						+e.form-actions-col
+							+checkBox('ask__form-check', 'Вы соглашаетесь с условиями обработки персональных данных и', ' политикой конфиденциальности')
+						+e.form-actions-col
+							+btn('ask__form-submit', 'получить консультацию')(type='submit')
+
+		//end ask
+			
+	//end main

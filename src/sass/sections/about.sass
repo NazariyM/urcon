@@ -1,0 +1,37 @@
+.about
+   padding: 60px 0
+   &__title
+      margin-bottom: 40px
+   &__text
+      max-width: 708px
+      margin: 0 auto 50px
+      text-align: center
+      &-descr
+         +f('man300', 14, 19)
+         &_top
+            max-width: 620px
+         &:not(:last-child)
+            margin-bottom: 30px
+      &-quote
+         position: relative
+         max-width: 600px
+         margin: 50px auto
+         padding-left: 60px
+         +f('pn600', 20, 20)
+         letter-spacing: 0.31px
+         text-align: left
+         color: #6D788C
+         &-icon
+            position: absolute
+            top: 0
+            left: 0
+            font-size: 50px
+   &__item
+      flex: 0 1 33.33333%
+      width: 33.33333%
+      padding: 0 15px
+      +f('pn600', 16)
+      letter-spacing: 0.25px
+      text-align: center
+      &-diamond
+         margin-bottom: 40px

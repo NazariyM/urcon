@@ -1,0 +1,58 @@
+.assess
+   padding: 60px 0
+   &__title
+      margin-bottom: 50px
+   &__content
+      position: relative
+      max-width: 994px
+      margin: 0 auto
+      padding: 61px 60px 57px
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04)
+      border: 1px solid #d5b893
+      background-color: #fff
+      &-title
+         max-width: 610px
+         margin: 0 auto 50px
+         +f('pn700', 24, 25, 0)
+         color: #6D788C
+      
+   &__form
+      width: 562px
+      &-block
+         &_width-1
+            max-width: 518px
+         &_width-2
+            //max-width: 518px
+         &_width-3
+            max-width: 358px
+         & + &
+            margin-top: 40px
+         &-title
+            margin-bottom: 35px
+            +f('pn600', 20, 25, 0)
+            color: #21262D
+         &-row
+            display: flex
+            margin: 0 -15px
+         &-col
+            flex: 0 1 50%
+            width: 50%
+            padding: 0 15px
+      &-check-box
+         &:not(:last-child)
+            margin-bottom: 10px
+      &-actions
+         margin-top: 30px
+         &_width-3
+            max-width: 358px
+      &-submit
+         margin-bottom: 16px
+   
+   &__result
+      position: absolute
+      top: 0
+      right: 0
+      width: 357px
+      &-inner
+         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
+         background-color: #ffffff

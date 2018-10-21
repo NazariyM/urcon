@@ -1,0 +1,45 @@
+.why-us
+   padding: 70px 0
+   &__container
+   &__title
+      margin-bottom: 80px
+   &__item
+      flex: 0 1 33.33333%
+      width: 33.33333%
+      padding: 0 15px
+      color: $white
+      text-align: center
+      &-title
+         margin-bottom: 20px
+         +f('pn700', 20, 24, 31)
+      &-descr
+         +f('man400', 14, 19)
+      &-icon
+         position: relative
+         margin-bottom: 50px
+         height: 70px
+         &::before
+            position: absolute
+            z-index: 1
+            width: 1px
+            height: 72px
+            background-color: #D5B893
+            transform: rotate(-45deg)
+            content: ''
+         &::after
+            position: absolute
+            top: calc(50% - 61px)
+            left: calc(50% - 61px)
+            z-index: -1
+            width: 122px
+            height: 122px
+            background-image: linear-gradient(270deg, #f9f2ea 0%, #ffffff 100%)
+            opacity: 0.31
+            transform: rotate(45deg)
+            content: ''
+         .icon-scales
+            font-size: 62px
+         .icon-sand-clock
+            font-size: 52px
+         .icon-coins
+            font-size: 60px

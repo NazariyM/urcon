@@ -1,0 +1,11 @@
+mixin popup(el)
+	case el.name
+
+		when 'thanks-popup'
+			+b.popup(data-popup-id='thanks-popup', tabindex='-1', role='dialog')
+				+e.container._xs
+					+e.close.js-popup-close: +i('close')
+					+b.contact-form.thanks-popup
+						+e.H5.title.title Спасибо!
+						+e.P Наш менеджер свяжется с Вами в ближайшее время
+						+b.BUTTON.thanks-popup__btn(data-popup-target='thanks-popup' type='button')

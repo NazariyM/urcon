@@ -1,0 +1,47 @@
+.slider
+   display: none
+   &.slick-initialized
+      display: block
+   
+.slider-dots
+   $parent: &
+   display: flex
+   justify-content: center
+   line-height: 0
+   &_gray
+      button
+         background-color: #808080
+   &_black
+      button
+         background-color: $color2
+   li
+      &:not(:last-child)
+         margin-right: 24px
+      &.slick-active
+         button
+            pointer-events: none
+            background-color: $color1
+      button
+         width: 6px
+         height: 6px
+         border-radius: 50%
+         +hide-text
+         transition: .3s ease-in-out
+         &:hover
+            opacity: .5
+         
+.slider-btn
+   position: absolute
+   top: 0
+   transition: .3s ease-in-out
+   &:hover
+      opacity: .5
+   &_prev
+      left: 0
+   &_next
+      right: 0
+   svg
+      font-size: 22px
+   &.slick-disabled
+      pointer-events: none
+      opacity: .15

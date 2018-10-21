@@ -1,0 +1,51 @@
+//fonts
+=font($alias, $name)
+   @font-face
+      font-family: $alias
+      src: url("../fonts/" + $name + ".eot")
+      src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".ttf") format("truetype")
+      font-weight: normal
+      font-style: normal
+
++font('Manrope-Light', 'Manrope-Light')
++font('Manrope-Bold', 'Manrope-Bold')
++font('Manrope-Medium', 'Manrope-Medium')
++font('Manrope-Regular', 'Manrope-Regular')
++font('Manrope-Semibold', 'Manrope-Semibold')
++font('ProximaNova-Black', 'ProximaNova-Black')
++font('ProximaNova-Bold', 'ProximaNova-Bold')
++font('ProximaNova-Extrabld', 'ProximaNova-Extrabld')
++font('ProximaNova-Regular', 'ProximaNova-Regular')
++font('ProximaNova-Semibold', 'ProximaNova-Semibold')
+
+=f($name, $font-size: null, $line-height: null, $letter-spacing: null)
+   $font-family: null
+   @if $name == "man300"
+      $font-family: "Manrope-Light"
+   @if $name == "man700"
+      $font-family: "Manrope-Bold"
+   @if $name == "man500"
+      $font-family: "Manrope-Medium"
+   @if $name == "man400"
+      $font-family: "Manrope-Regular"
+   @if $name == "man600"
+      $font-family: "Manrope-Semibold"
+   @if $name == "pn900"
+      $font-family: "ProximaNova-Black"
+   @if $name == "pn700"
+      $font-family: "ProximaNova-Bold"
+   @if $name == "pn800"
+      $font-family: "ProximaNova-Extrabld"
+   @if $name == "pn400"
+      $font-family: "ProximaNova-Regular"
+   @if $name == "pn600"
+      $font-family: "ProximaNova-Semibold"
+   font-family: $font-family, Arial, sans-serif
+   @if $font-family != null
+      font-weight: normal
+   @if $font-size != null
+      font-size: $font-size * 1px
+   @if $line-height != null
+      line-height: $line-height * 1px
+   @if $letter-spacing != null
+      letter-spacing: ($letter-spacing / 100) * 1px

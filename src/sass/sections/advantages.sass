@@ -1,0 +1,28 @@
+.advantages
+   padding: 70px 0
+   &__row
+      flex-wrap: wrap
+      justify-content: center
+   &__item
+      flex: 0 1 33.33333%
+      width: 33.33333%
+      padding: 0 15px
+      text-align: center
+      &:nth-child(3) ~ &
+         margin-top: 30px
+         
+      &-title
+         margin-bottom: 17px
+         +f('pn900', 38, 36)
+         letter-spacing: 0.6px
+         color: #D5B893
+      &-icon
+         margin-bottom: 16px
+         fill: #D5B893
+         .icon-whatsapp
+            font-size: 39px
+         .icon-coin-purse
+            font-size: 46px
+      &-descr
+         +f('pn600', 14, 17)
+         color: $white

@@ -1,0 +1,156 @@
+.form-field
+   $parent: &
+   position: relative
+   display: block
+   +xs
+      flex: 1 1 auto
+      width: 100%
+   &:not(:last-child)
+      margin-bottom: 7px
+   &.has-error .form-field__error
+      opacity: 1
+      transform: translate(-50%, 0)
+   
+   &__input
+      height: 42px
+      width: 100%
+      padding: 0 13px
+      +f('man500', 12, 42)
+      color: #363C43
+      border-radius: 4px
+      border: 1px solid #d5b893
+      background-color: #f9f9f9
+      transition: .3s ease-in-out
+      +placeholder-color(#6D788C)
+      &:focus
+         background-color: transparent
+      #{$parent}.has-error &
+         border-color: #fb1c46
+      #{$parent}_has-label &
+         flex: 0 0 200px
+         margin: 0 11px
+      &.is-disabled
+         pointer-events: none
+      
+   &__textarea
+      $parent: &
+      display: block
+      width: 100%
+      height: 138px
+      padding: 9px 13px
+      +f('man500', 12, 23)
+      resize: none
+      color: #363C43
+      border-radius: 4px
+      border: 1px solid #d5b893
+      background-color: #f9f9f9
+      transition: .3s ease-in-out
+      +placeholder-color(#6D788C)
+      &:focus
+         background-color: transparent
+   &__error
+      position: absolute
+      bottom: calc(100% + 10px)
+      left: 50%
+      z-index: 1
+      transform: translate(-50%, -15px)
+      padding: 5px 10px
+      background-color: #fb1c46
+      text-align: center
+      color: $white
+      +f('man500')
+      font-size: 12px
+      border-radius: 5px
+      white-space: nowrap
+      opacity: 0
+      transition: .3s ease-in-out
+      &::before
+         position: absolute
+         top: 100%
+         left: calc(50% - 5px)
+         +arr(18, 8, #fb1c46, b)
+         content: ''
+         
+   &__label
+      display: inline-flex
+      align-items: center
+      +f('man600', 13, 23)
+      color: #6D788C
+      &-descr
+         flex: 0 0 166px
+         width: 166px
+      svg
+         fill: #6D788C
+         
+.check-box
+   $parent: &
+   display: inline-flex
+   align-items: flex-start
+   &_radio
+      display: block
+   &__label
+      position: relative
+      margin-right: 18px
+      border-radius: 2px
+      cursor: pointer
+      #{$parent}_radio &
+         display: inline-flex
+         align-items: center
+         margin-right: 0
+   &__visual
+      position: relative
+      flex: 0 0 24px
+      width: 24px
+      height: 24px
+      background-color: #f0f0f0
+      &::after
+         position: absolute
+         top: calc(50% - 6px)
+         left: calc(50% - 6px)
+         opacity: 0
+         transform: scale(.3)
+         width: 12px
+         height: 12px
+         border-radius: 7px
+         background-color: #e21c21
+         transition: .3s ease-in-out
+         content: ''
+      #{$parent}_radio &
+         margin-right: 18px
+         flex: 0 0 18px
+         width: 18px
+         height: 18px
+         border-radius: 9px
+         border: 1px solid #d5b893
+         background-color: #f9f9f9
+         &::after
+            top: calc(50% - 5px)
+            left: calc(50% - 5px)
+            width: 10px
+            height: 10px
+            content: ''
+   &__text
+      flex: 1
+      +f('man400', 10, 13, 0)
+      #{$parent}_radio &
+         +f('man600', 13, 23, 0)
+         color: #6D788C
+         +nosel
+         
+   &__link
+      color: #D5B893
+   &__input
+      display: none
+      &:checked ~ #{$parent}__visual::after
+         opacity: 1
+         transform: scale(1)
+      &-wrap
+         position: relative
+      &-text
+         position: absolute
+         left: 10px
+         color: #6D788C
+         +f('man500', 12, 42)
+   &__field-input
+      @extend .form-field__input
+      padding: 0 15px 0 70px

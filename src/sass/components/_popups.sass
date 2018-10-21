@@ -1,0 +1,98 @@
+.popup
+   position: fixed
+   top: 0
+   right: 0
+   bottom: 0
+   left: 0
+   opacity: 0
+   visibility: hidden
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+   z-index: 1300
+   overflow: auto
+   outline: 0
+   text-align: center
+   font-size: 0
+   transform: translate3d(0, 0, 0)
+   transition: .3s ease-in-out
+   will-change: opacity, transform
+   $parent: &
+   &::before
+      +coverdiv
+      opacity: .9
+      background: #17171a url(../img/decor/noise_black.png)
+      content: ''
+   &:after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 0
+      height: 100%
+   
+   &.opened
+      opacity: 1
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      visibility: visible
+   &__close
+      position: absolute
+      top: -5px
+      right: -28px
+      z-index: 10
+      cursor: pointer
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 20px
+      height: 20px
+      border: 0
+      +xs
+         top: -30px
+         right: 15px
+      &:hover svg
+         fill: $color1
+      svg
+         fill: #808080
+         font-size: 14px
+         +trs
+   
+   &__container
+      display: inline-block
+      vertical-align: middle
+      max-width: 874px
+      width: 100%
+      position: relative
+      padding: 0 15px
+      margin: 30px auto
+      transition: opacity .5s ease, transform .5s ease
+      transform: translate3d(0, -100px, 0)
+      will-change: transform, opacity
+      text-align: left
+      border-radius: 5px
+      +mob-fix
+      &_xs
+         max-width: 420px
+      &_lg
+         max-width: 706px
+         
+body.popup-opened
+   overflow: hidden
+
+.popup.opened .popup__container
+   -webkit-transform: translate3d(0, 0, 0)
+   -moz-transform: translate3d(0, 0, 0)
+   transform: translate3d(0, 0, 0)
+  
+// *** begin thanks-popup *** //
+.thanks-popup
+   text-align: center
+   &__btn
+      display: none
+   p
+      color: $color2
+      font-size: 18px
+      line-height: 24px
+      text-align: center
+      +xs
+         font-size: 16px
+      
+// end thanks-popup //

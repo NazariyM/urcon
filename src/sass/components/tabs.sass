@@ -1,0 +1,86 @@
+.tabs
+   $parent: &
+   display: flex
+   align-items: flex-start
+   +md
+      flex-direction: column
+   &__nav
+      flex: 0 0 276px
+      width: 276px
+      padding-top: 43px
+      +md
+         flex: 0 1 auto
+         width: 100%
+         padding: 0
+         margin-bottom: 30px
+      +xs
+         margin-bottom: 15px
+   &__for
+      position: relative
+      flex: 1
+   &__btn
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      height: 80px
+      padding: 0 36px 0 39px
+      cursor: pointer
+      line-height: 1
+      +f('ub500', 20, 85)
+      text-transform: uppercase
+      background: #17171a url(../img/decor/noise_black.png)
+      transition: .3s ease-in-out
+      color: $white
+      +nosel
+      +xs
+         height: 55px
+         line-height: 55px
+         font-size: 17px
+   
+      &.is-active
+         pointer-events: none
+         background: $white
+         box-shadow: 0 15px 40px rgba(26, 3, 4, 0.1)
+         color: $color2
+      &:hover
+         opacity: .9
+      &:not(:last-child)
+         margin-bottom: 1px
+      span
+         padding-right: 20px
+         text-align: left
+      &-icon
+         fill: $white
+         font-size: 11px
+         transition: .3s ease-in-out
+         +md
+            transform: rotate(90deg)
+         .is-active &
+            fill: $color1
+            
+   &__tab
+      display: none
+      position: relative
+      padding: 13px 44px 38px 44px
+      box-shadow: 0 15px 40px rgba(26, 3, 4, 0.1)
+      background-color: #ffffff
+      +sm
+         padding: 13px 35px 38px
+      +xs
+         padding: 15px 15px 40px
+      &::before, &::after
+         position: absolute
+         right: 0
+         width: 15px
+         height: 15px
+         border-right: 2px solid $color1
+         content: ''
+      &::before
+         top: 0
+         border-top: 2px solid $color1
+      &::after
+         border-bottom: 2px solid $color1
+         bottom: 0
+      &:first-child
+         display: block
