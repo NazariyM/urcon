@@ -1,22 +1,21 @@
 .about
-   padding: 60px 0
+   padding: 37px 0 64px
    &__title
-      margin-bottom: 40px
+      margin-bottom: 33px
    &__text
-      max-width: 708px
-      margin: 0 auto 50px
+      max-width: 700px
+      margin: 0 auto 100px
       text-align: center
       &-descr
          +f('man300', 14, 19)
-         &_top
-            max-width: 620px
-         &:not(:last-child)
-            margin-bottom: 30px
+         &_size
+            margin: 0 auto 30px
+            max-width: 618px
       &-quote
          position: relative
          max-width: 600px
-         margin: 50px auto
-         padding-left: 60px
+         margin: 45px auto
+         padding: 0 20px 0 66px
          +f('pn600', 20, 20)
          letter-spacing: 0.31px
          text-align: left
@@ -25,13 +24,17 @@
             position: absolute
             top: 0
             left: 0
-            font-size: 50px
+            font-size: 31px
+   &__items-container
+      max-width: 1200px
+   &__row
    &__item
-      flex: 0 1 33.33333%
-      width: 33.33333%
-      padding: 0 15px
+      $parent: &
       +f('pn600', 16)
       letter-spacing: 0.25px
       text-align: center
       &-diamond
-         margin-bottom: 40px
+         margin-bottom: 55px
+      &-descr
+         max-width: 210px
+         margin: 0 auto

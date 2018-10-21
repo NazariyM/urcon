@@ -11,7 +11,8 @@
          background-color: #D5B893
          content: ''
    &__title
-      margin-bottom: 30px
+      max-width: 900px
+      margin: 0 auto 30px
    &__container
       display: flex
       align-items: center
@@ -19,6 +20,8 @@
       justify-content: center
       height: 100%
       text-align: center
+   &__btn
+      min-width: 410px
    &__benefits
       position: relative
       z-index: 1
@@ -26,26 +29,40 @@
       margin: -73px auto 0
 
 .benefits
-   $parent: &
-   display: flex
-   padding: 30px 30px 50px
+   padding: 50px 30px 60px
    background: $white
    border: 1px solid #DCB385
    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
    &__item
+      $parent: &
       position: relative
-      flex: 0 1 33.33333%
-      width: 33.33333%
-      padding: 0 15px
       text-align: center
       line-height: 17px
       color: #363C43
       &:not(:last-child)
          &::after
             position: absolute
-            top: 0
+            top: -18px
             right: 0
             width: 12px
             height: 205px
             background: url("../img/decor/vert-line.svg") no-repeat
             content: ''
+      .diamond-shape__title
+         position: relative
+         top: 5px
+      &:nth-child(2)
+         &::after
+            right: -10px
+         .diamond-shape__title
+            font-size: 48px
+      &-diamond
+         margin-bottom: 23px
+      &-title
+      &-descr
+         max-width: 280px
+         margin: 0 auto
+         +f('pn400', 14, 17)
+         #{$parent}:nth-child(1) &
+            max-width: 240px
+      &-icon

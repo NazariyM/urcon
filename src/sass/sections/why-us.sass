@@ -1,23 +1,27 @@
 .why-us
-   padding: 70px 0
+   padding: 60px 0 75px
    &__container
+      max-width: 1340px
    &__title
-      margin-bottom: 80px
+      max-width: 680px
+      margin: 0 auto 40px
    &__item
-      flex: 0 1 33.33333%
-      width: 33.33333%
-      padding: 0 15px
+      $parent: &
       color: $white
       text-align: center
+      &-text
+         margin-top: -13px
       &-title
-         margin-bottom: 20px
+         margin-bottom: 10px
          +f('pn700', 20, 24, 31)
       &-descr
+         margin: 0 auto
+         max-width: 290px
          +f('man400', 14, 19)
       &-icon
          position: relative
-         margin-bottom: 50px
-         height: 70px
+         +flexCenter
+         height: 122px
          &::before
             position: absolute
             z-index: 1
@@ -42,4 +46,5 @@
          .icon-sand-clock
             font-size: 52px
          .icon-coins
-            font-size: 60px
+            font-size: 48px
+      

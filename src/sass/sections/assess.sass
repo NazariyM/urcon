@@ -1,7 +1,18 @@
 .assess
+   position: relative
    padding: 60px 0
+   &::after
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      height: 130px
+      background-color: #D5B893
+      content: ''
    &__title
-      margin-bottom: 50px
+      max-width: 650px
+      margin: 0 auto 107px
    &__content
       position: relative
       max-width: 994px
@@ -10,15 +21,26 @@
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04)
       border: 1px solid #d5b893
       background-color: #fff
+      &::before
+         position: absolute
+         top: -50px
+         left: -104px
+         right: -104px
+         height: 434px
+         z-index: -1
+         background-color: #513A1D
+         content: ''
       &-title
          max-width: 610px
-         margin: 0 auto 50px
+         margin: 0 auto 30px
          +f('pn700', 24, 25, 0)
          color: #6D788C
+         text-align: center
       
    &__form
       width: 562px
       &-block
+         $parent: &
          &_width-1
             max-width: 518px
          &_width-2
@@ -26,18 +48,35 @@
          &_width-3
             max-width: 358px
          & + &
-            margin-top: 40px
+            margin-top: 44px
          &-title
-            margin-bottom: 35px
+            margin-bottom: 30px
             +f('pn600', 20, 25, 0)
             color: #21262D
          &-row
             display: flex
             margin: 0 -15px
+            #{$parent}_width-2 &
+               margin: 0 -10px
          &-col
             flex: 0 1 50%
             width: 50%
             padding: 0 15px
+            #{$parent}_width-1 &
+               &:nth-child(1)
+                  flex: 0 1 45%
+                  width: 45%
+               &:nth-child(2)
+                  flex: 0 1 55%
+                  width: 55%
+            #{$parent}_width-2 &
+               padding: 0 10px
+               &:nth-child(1)
+                  flex: 0 0 50.5%
+                  width: 50.5%
+               &:nth-child(2)
+                  flex: 0 1 50%
+                  width: 50%
       &-check-box
          &:not(:last-child)
             margin-bottom: 10px
@@ -46,13 +85,36 @@
          &_width-3
             max-width: 358px
       &-submit
-         margin-bottom: 16px
+         width: 100%
+         margin-bottom: 26px
+      &-check
    
    &__result
       position: absolute
-      top: 0
-      right: 0
-      width: 357px
+      top: 145px
+      right: -45px
+      width: 358px
+      border: 22px solid #f9f2ea
       &-inner
          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
          background-color: #ffffff
+      &-header
+         padding: 20px 25px
+      &-descr
+         margin-bottom: 20px
+         +f('pn400', 16, 20)
+         color: #21262D
+      &-title
+      &-text
+         display: flex
+         align-items: flex-start
+         padding: 20px 25px
+         &:nth-child(2n)
+            background-color: #F9F9F9
+         &-title
+            flex: 0 0 100px
+            +f('pn700', 16, 25, 0)
+            color: #21262D
+         &-descr
+            +f('pn600', 14, 18, 0)
+            color: #808A9D

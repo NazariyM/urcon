@@ -15,7 +15,7 @@ body
 .container
    position: relative
    z-index: 1
-   max-width: 1170px
+   max-width: 1110px
    margin: 0 auto
    padding: 0 15px
 
@@ -25,6 +25,9 @@ body
 
 .col
    padding: 0 15px
+   &_sm
+      flex: 0 1 33.33333%
+      width: 33.33333%
 
 .main
    display: block
@@ -34,7 +37,7 @@ body
    position: relative
    z-index: 1
    display: inline-block
-   padding: 21px 54px
+   padding: 21px 30px
    outline: 0
    +f('pn700', 16, 20, 36)
    text-align: center
@@ -59,6 +62,8 @@ body
       transition: .4s ease-in-out
       pointer-events: none
       content: ''
+   &_ls
+      letter-spacing: 1.8px
    span
       position: relative
       z-index: 1
@@ -81,6 +86,7 @@ body
    +cover
    &::before
       +coverdiv
+      pointer-events: none
       content: ''
    &_1
       &::before

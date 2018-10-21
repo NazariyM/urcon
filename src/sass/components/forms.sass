@@ -14,7 +14,7 @@
    &__input
       height: 42px
       width: 100%
-      padding: 0 13px
+      padding: 0 11px
       +f('man500', 12, 42)
       color: #363C43
       border-radius: 4px
@@ -79,9 +79,12 @@
       &-descr
          flex: 0 0 166px
          width: 166px
+         letter-spacing: 0
       svg
          fill: #6D788C
-         
+      .icon-rubl-2
+         font-size: 19px
+
 .check-box
    $parent: &
    display: inline-flex
@@ -148,9 +151,9 @@
          position: relative
       &-text
          position: absolute
-         left: 10px
+         left: 15px
          color: #6D788C
          +f('man500', 12, 42)
    &__field-input
       @extend .form-field__input
-      padding: 0 15px 0 70px
+      padding: 0 15px 0 74px

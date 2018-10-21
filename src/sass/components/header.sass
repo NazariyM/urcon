@@ -1,21 +1,28 @@
 .header
    $parent: &
-   padding: 10px 0
+   padding: 7px 0
+   //height: 84px
+   //height: 70px
    &__container
       display: flex
       align-items: center
       justify-content: space-between
+      max-width: 1230px
    &__logo
       flex: 0 0 107px
       
    &__nav
+      margin-left: 30px
    &__contact
       display: flex
       flex-direction: column
+      margin-right: 17px
+      letter-spacing: 0
       &-tel
          margin-bottom: 2px
          +f('pn800', 18, 22)
          color: #000
       &-link
+         margin-left: 2px
          +f('pn600', 12, 15)
          color: #E21C21

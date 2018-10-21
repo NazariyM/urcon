@@ -17,20 +17,20 @@ block content
 
 			+b.benefits.screen__benefits
 				+e.row.row
-					+e.item
-						+b.diamond-shape
+					+e.item.col.col_sm
+						+b.diamond-shape.benefits__item-diamond
 							+e.title 2
 								+e.SPAN.title-descr МЕСЯЦА
-						+e.P Средний срок возврата долга нашим клиентам
-					+e.item
-						+b.diamond-shape
+						+e.P.item-descr Средний срок возврата долга нашим клиентам
+					+e.item.col.col_sm
+						+b.diamond-shape.benefits__item-diamond
 							+e.title %
-						+e.P Оплату (% от иска) мы получаем только после исполнения иска и зачисления средств на ваш счет
-					+e.item
+						+e.P.item-descr Оплату (% от иска) мы получаем только после исполнения иска и зачисления средств на ваш счет
+					+e.item.col.col_sm
 						+e.item-shape
-						+b.diamond-shape
+						+b.diamond-shape.benefits__item-diamond
 							+e.icon._rubl: +i('rubl')
-						+e.P Стоимость наших услуг всегда включена в сумму иска
+						+e.P.item-descr Стоимость наших услуг всегда включена в сумму иска
 		//end screen
 			
 		//begin solutions
@@ -47,14 +47,15 @@ block content
 					'Контрагент объявил себя банкротом?']
 				for text in solutionsList
 					+e.item
-						+e.P.item-question= text
-						+e.A.item-link(href='#!') Есть решение →
+						+e.item-inner
+							+e.P.item-question= text
+							+e.A.item-link(href='#!') Есть решение →
 		//end solutions
 			
 		//begin advantages
 		+b.SECTION.advantages.has-bg._2(style=`background-image: url(img/bg/advantages_bg.jpg)`)
 			+e.container.container
-				+sectTitle('_color-2 solutions__title', '5 причин сотрудничать с ЮРКОН', 'факты, отличающие нас от 90% конкурентов')
+				+sectTitle('_color-2 advantages__title', '5 причин сотрудничать с ЮРКОН', 'факты, отличающие нас от 90% конкурентов')
 				+e.row.row
 					-
 						advantagesList = [{
@@ -74,7 +75,7 @@ block content
 						descr: 'Так как наша оплата это процент от суммы долга, то мы заинтересованы в максимально крупном и быстром возврате средств'
 						}]
 					mixin advantagesItem(item)
-						+e.item
+						+e.item.col.col_sm
 							if item.icon
 								+e.item-icon: +i(`${item.icon}`)
 							if item.title
@@ -148,19 +149,28 @@ block content
 							+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
 							+formField('ask__form-field', 'Введите вашу почту')(type='email')
 						+e.form-actions._width-3
-							+btn('assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
-							+checkBox('assess__form-check', 'Вы соглашаетесь с условиями обработки персональных данных и', ' политикой конфиденциальности')
+							+btn('_ls assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
+							.check-box.assess__form-check
+								label.check-box__label
+									input.check-box__input(type='checkbox', name='', checked='checked')
+									.check-box__visual
+								span.check-box__text
+									| Вы соглашаетесь с условиями обработки
+									br
+									| персональных данных и
+									= ' '
+									a.check-box__link.link-decor(href='#!') политикой конфиденциальности
 
 					+e.result
 						+e.result-inner
 							+e.result-header
-								+e.result-title Стоимость наших услуг составит:
-								+e.SPAN.result-price.title-sm._red 25 000 руб
+								+e.result-descr Стоимость наших услуг составит:
+								+e.SPAN.result-title.title-sm._red 25 000 руб
 							+e.result-text
-								+e.result-text-price 15 000 руб
+								+e.result-text-title 15 000 руб
 								+e.result-text-descr в течение 5 дней с момента вступления в силу решения суда
 							+e.result-text
-								+e.result-text-price 10 000 руб
+								+e.result-text-title 10 000 руб
 								+e.result-text-descr в течение 5 дней с момента поступления средств на ваш счет
 
 		//end assess
@@ -170,18 +180,19 @@ block content
 			+e.container.container
 				+sectTitle('_color-1 about__title', 'О компании')
 				+e.text
-					+e.P.text-descr._top Благодаря более чем 15-летнему опыту юридического сопровождения малых и средних торговых и производственных компаний по вопросам взыскания задолженностей, «ЮРКОН» может предложить по-настоящему качественные услуги по защите интересов своих клиентов
+					+e.P.text-descr._size Благодаря более чем 15-летнему опыту юридического сопровождения малых и средних торговых и производственных компаний по вопросам взыскания задолженностей, «ЮРКОН» может предложить по-настоящему качественные услуги по защите интересов своих клиентов
 					+e.BLOCKQUOTE.text-quote Для взыскания задолженностей мы используем исключительно законные методы, взаимодействуя с судом и со службой судебных приставов
 						+i('quote', 'about__text-quote-icon')
 					+e.P.text-descr Наши услуги включают в себя как ведение переговоров на досудебной стадии, так и работу со службой судебных приставов - с целью реального исполнения решения суда и поступления средств на ваш счет
-				+e.row.row
+			+e.items-container.container
+				+e.items-row.row
 					-
 						aboutItem = [
 						['15', 'Стаж наших юристов более 15 лет'],
 						['B2B', 'Строго для бизнеса'],
 						['10', 'Опытных юристов, специализирующихся на вопросах взыскания задолженности']]
 					for text in aboutItem
-						+e.item
+						+e.item.col.col_sm
 							+b.diamond-shape.about__item-diamond
 								+e.title= text[0]
 							+e.P.item-descr= text[1]
@@ -207,11 +218,12 @@ block content
 						descr: 'Неопытный юрист может плохо рассчитать штрафы, пени за упущенную выгоду, судебные и другие расходы, или не включить их вовсе.'
 						}]
 					mixin whyUsItem(item)
-						+e.item
+						+e.item.col.col_sm
 							+e.item-icon
 								+i(`${item.icon}`)
-							+e.H5.item-title= item.title
-							+e.P.item-descr= item.descr
+							+e.item-text
+								+e.H5.item-title= item.title
+								+e.P.item-descr= item.descr
 					each item in whyUsList
 						+whyUsItem(item)
 		//end why-us
