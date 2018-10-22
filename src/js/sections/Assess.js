@@ -9,6 +9,7 @@ class Assess {
     this.lastPrice = this.block.querySelector('.js-last-price');
     this.resultBlock = this.block.querySelector('.assess__result');
     this.priceListUrl = this.resultBlock.dataset.pricelistUrl;
+    this.activeCase = 1;
 
     if (!this.block) return;
 
