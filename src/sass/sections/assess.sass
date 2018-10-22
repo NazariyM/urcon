@@ -43,7 +43,7 @@
          $parent: &
          &_width-1
             max-width: 518px
-         &_width-2
+         &_width-3
             max-width: 358px
          & + &
             margin-top: 44px
@@ -54,7 +54,7 @@
          &-row
             display: flex
             margin: 0 -15px
-            #{$parent}_width-2 &
+            #{$parent}_width-3 &
                margin: 0 -10px
          &-col
             flex: 0 1 50%
@@ -80,7 +80,7 @@
             margin-bottom: 10px
       &-actions
          margin-top: 30px
-         &_width-2
+         &_width-3
             max-width: 358px
       &-submit
          width: 100%
@@ -105,6 +105,7 @@
       &-title
          padding: 0 25px
          margin-bottom: 20px
+         letter-spacing: .5px
       &-item
       &-text
          display: flex
@@ -115,12 +116,9 @@
          &-title
             flex: 0 0 110px
             padding-right: 10px
-            +f('pn700', 16, 25, 0)
+            +f('pn700', 16, 25)
+            letter-spacing: .5px
             color: #21262D
-            //opacity: 0
-            //transition: opacity .3s ease-in-out
-            .is-active &
-               opacity: 1
          &-descr
             +f('pn600', 14, 18, 0)
             color: #808A9D

@@ -1,21 +1,48 @@
 .advantages
    padding: 56px 0 110px
+   +xs
+      padding: 55px 0 60px
    &__title
       padding-left: 40px
       margin-bottom: 88px
+      +sm
+         padding-left: 0
+      +xs
+         margin-bottom: 55px
       .section-title__text
          letter-spacing: .5px
    &__row
       flex-wrap: wrap
       justify-content: center
       margin: 0 -38px
+      +md
+         margin: 0 -15px
+      +sm
+         margin: 0 -10px
    &__item
       $parent: &
+      padding: 0 38px
       text-align: center
+      +sm
+         padding: 0 10px
+      +xs
+         padding: 0 15px
+   
       &:nth-child(3) ~ &
          flex: 0 1 37%
          width: 37%
          padding: 85px 60px 0
+         +sm
+            flex: 0 1 50%
+            width: 50%
+            padding: 50px 30px 0
+         +xs
+            flex: 1 1 auto
+            width: 100%
+            padding: 0 15px
+      &:not(:last-child)
+         +xs
+            margin-bottom: 30px
    
       &-title
          margin-bottom: 20px
@@ -24,8 +51,12 @@
          color: #D5B893
          #{$parent}:nth-child(1) &
             margin-left: -12px
+            +sm
+               margin-left: 0
          #{$parent}:nth-child(3) &
             margin-left: 12px
+            +xs
+               margin-left: 0
             
       &-icon
          margin-bottom: 16px

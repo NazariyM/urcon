@@ -43,6 +43,9 @@
             content: ''
    
       &-link
+         $parent: &
+         display: inline-flex
+         align-items: center
          margin-left: auto
          color: #E21C21
          +f('pn700')
@@ -50,3 +53,7 @@
          line-height: 15px
          letter-spacing: 1.02px
          text-transform: uppercase
+         &-arr
+            margin: -1px 0 0 4px
+            #{$parent}:hover &
+               animation: smallMoveRight .3s ease-in-out

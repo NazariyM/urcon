@@ -34,7 +34,7 @@ block content
 		//end screen
 			
 		//begin solutions
-		+b.SECTION.solutions#solutions
+		//+b.SECTION.solutions#solutions
 			+e.container.container
 				+sectTitle('_color-1 solutions__title', 'Найдите себя', 'Самые популярные проблемы малого и среднего бизнеса')
 				-
@@ -49,7 +49,9 @@ block content
 					+e.item
 						+e.item-inner
 							+e.P.item-question= text
-							+e.A.item-link(href='#!') Есть решение →
+							+e.A.item-link(href='#!') Есть решение
+								= ' '
+								+e.SPAN.item-link-arr →
 		//end solutions
 			
 		//begin advantages
@@ -86,7 +88,7 @@ block content
 		//end advantages
 			
 		//begin assess
-		+b.SECTION.assess#assess
+		//+b.SECTION.assess#assess
 			+e.container.container
 				+sectTitle('_color-1 assess__title', 'Узнайте, сможем ли мы взять ваше дело', 'Мы беремся только за 40% предлагаемых нам дел, так как мы предоставляем реальную гарантию, а не просто пишем о ней на сайте.')
 				+e.content
@@ -97,7 +99,7 @@ block content
 							+b.form-field._has-label.assess__form-field
 								+e.LABEL.label
 									+e.SPAN.label-descr Сумма задолженности
-									+e.INPUT.input.js-debt-amount(class='js-number-input' type='text' name='debt-amount' pattern='[0-9]' value='1000')
+									+e.INPUT.input.js-debt-amount(class='js-number-input' type='text' name='debt-amount' value='1000')
 									+e.SPAN: +i('rubl-2')
 							+b.form-field._has-label.assess__form-field
 								+e.LABEL.label
@@ -109,7 +111,7 @@ block content
 							+e.H5.form-block-title 2. На каком основании требуется задолженность?
 							+e.form-block-row
 								+e.form-block-col
-									+checkBox('_radio assess__form-check-box', 'Договор поставки', false, true)(name='radio-1')
+									+checkBox('_radio assess__form-check-box', 'Договор поставки', false, true)(name='radio-1' checked)
 									+checkBox('_radio assess__form-check-box', 'Договор оказания услуг', false, true)(name='radio-1')
 									+checkBox('_radio assess__form-check-box', 'Договор подряда', false, true)(name='radio-1')
 								+e.form-block-col
@@ -123,11 +125,11 @@ block content
 												span.check-box__input-text Другое:
 												input.check-box__field-input.is-disabled(type='text' name='' placeholder='' readonly)
 
-						+e.form-block
+						+e.form-block._width-2
 							+e.H5.form-block-title 3. На какой стадии находится иск?
 							+e.form-block-row
 								+e.form-block-col
-									+checkBox('_radio assess__form-check-box', 'Досудебная (ведутся переговоры)', false, true)(name='radio-2')
+									+checkBox('_radio assess__form-check-box', 'Досудебная (ведутся переговоры)', false, true)(name='radio-2' checked)
 									+checkBox('_radio assess__form-check-box', 'Судебная (подан иск)', false, true)(name='radio-2')
 								+e.form-block-col
 									+checkBox('_radio assess__form-check-box', 'Есть решение суда', false, true)(name='radio-2')
@@ -139,15 +141,15 @@ block content
 												span.check-box__input-text Другое:
 												input.check-box__field-input.is-disabled(type='text' name='' placeholder='' readonly)
 
-						+e.form-block._width-2
+						+e.form-block._width-3
 							+e.H5.form-block-title 4. ИНН вашего должника (если есть)
 							+formField('ask__form-field', 'Введите ИНН')(class='js-number-input')
-						+e.form-block._width-2
+						+e.form-block._width-3
 							+e.H5.form-block-title 5. Укажите ваши контактные данные:
 							+formField('ask__form-field', 'Введите ваше имя')
 							+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
 							+formField('ask__form-field', 'Введите вашу почту')(type='email')
-						+e.form-actions._width-2
+						+e.form-actions._width-3
 							+btn('_ls assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
 							.check-box
 								label.check-box__label
@@ -185,7 +187,7 @@ block content
 		//end assess
 
 		//begin about
-		+b.SECTION.about#about
+		//+b.SECTION.about#about
 			+e.container.container
 				+sectTitle('_color-1 about__title', 'О компании')
 				+e.text
@@ -208,7 +210,7 @@ block content
 		//end about
 			
 		//begin why-us
-		+b.SECTION.why-us.has-bg._3#why-us(style=`background-image: url(img/bg/why-us_bg.jpg)`)
+		//+b.SECTION.why-us.has-bg._3#why-us(style=`background-image: url(img/bg/why-us_bg.jpg)`)
 			+e.container.container
 				+sectTitle('_color-2 why-us__title', 'ПОЧЕМУ ТАК ВАЖНО РАБОТАТЬ ИСКЛЮЧИТЕЛЬНО С ПРОФЕССИОНАЛАМИ')
 				+e.row.row
@@ -238,7 +240,7 @@ block content
 		//end why-us
 			
 		//begin service
-		+b.SECTION.service#service
+		//+b.SECTION.service#service
 			+e.container.container
 				+sectTitle('_color-1 service__title', 'контрагенты часто задерживают оплату?', 'абонентское юридическое обслуживание')
 				+e.row.row
@@ -275,7 +277,7 @@ block content
 		//end service
 
 		//begin ask
-		+b.SECTION.ask
+		//+b.SECTION.ask
 			+e.container.container
 				+sectTitle('_color-1 ask__title', 'Остались вопросы?')
 				+e.P.descr Звоните по телефону
