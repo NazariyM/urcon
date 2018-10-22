@@ -44,8 +44,6 @@
          &_width-1
             max-width: 518px
          &_width-2
-            //max-width: 518px
-         &_width-3
             max-width: 358px
          & + &
             margin-top: 44px
@@ -82,7 +80,7 @@
             margin-bottom: 10px
       &-actions
          margin-top: 30px
-         &_width-3
+         &_width-2
             max-width: 358px
       &-submit
          width: 100%
@@ -101,20 +99,28 @@
       &-header
          padding: 20px 25px
       &-descr
-         margin-bottom: 20px
+         max-width: 170px
          +f('pn400', 16, 20)
          color: #21262D
       &-title
+         padding: 0 25px
+         margin-bottom: 20px
+      &-item
       &-text
          display: flex
          align-items: flex-start
-         padding: 20px 25px
-         &:nth-child(2n)
+         padding: 25px
+         &:nth-child(even)
             background-color: #F9F9F9
          &-title
-            flex: 0 0 100px
+            flex: 0 0 110px
+            padding-right: 10px
             +f('pn700', 16, 25, 0)
             color: #21262D
+            //opacity: 0
+            //transition: opacity .3s ease-in-out
+            .is-active &
+               opacity: 1
          &-descr
             +f('pn600', 14, 18, 0)
             color: #808A9D

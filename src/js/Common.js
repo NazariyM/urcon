@@ -1,12 +1,9 @@
-import objectFitImages from 'object-fit-images';
 import { $body, detectIE, $scrolledElements } from './_helpers';
 
 // import './components/Header';
 import './components/Popups';
 import './components/Form';
-import './sections/Contacts';
-import './components/Sliders';
-import './components/CTabs';
+import './sections/Assess';
 
 export class Common {
   constructor() {
@@ -14,7 +11,6 @@ export class Common {
   }
 
   init() {
-    objectFitImages();
     this.addClassIE();
     this.scrollBtn();
   }
@@ -24,13 +20,12 @@ export class Common {
   }
 
   scrollBtn() {
-    const $btn = $('.js-scroll-to');
-    const $destination = $('.js-scroll-dest');
+    const $btn = $('.scroll-top-btn');
 
     $btn.on('click', (e) => {
       e.preventDefault();
       $scrolledElements.animate({
-        scrollTop: $destination.offset().top
+        scrollTop: $body.offset().top
       }, 1500);
     });
   }

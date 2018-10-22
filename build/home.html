@@ -158,10 +158,10 @@
             <form class="assess__form js-form" action="#!" method="POST">
               <div class="assess__form-block">
                 <h5 class="assess__form-block-title">1. Укажите детали вашего дела</h5>
-                <div class="form-field form-field_has-label assess__form-field"><label class="form-field__label"><span class="form-field__label-descr">Сумма задолженности</span><input class="form-field__input" type="text" name="" /><span><svg class="icon-rubl-2 ">
+                <div class="form-field form-field_has-label assess__form-field"><label class="form-field__label"><span class="form-field__label-descr">Сумма задолженности</span><input class="form-field__input js-debt-amount js-number-input" type="text" name="debt-amount" pattern="[0-9]" /><span><svg class="icon-rubl-2 ">
                         <use xlink:href="img/sprite.svg#icon-rubl-2"></use>
                       </svg></span></label></div>
-                <div class="form-field form-field_has-label assess__form-field"><label class="form-field__label"><span class="form-field__label-descr">Срок задолженности</span><input class="form-field__input" type="text" name="" /><span>месяцев</span></label></div>
+                <div class="form-field form-field_has-label assess__form-field"><label class="form-field__label"><span class="form-field__label-descr">Срок задолженности</span><input class="form-field__input js-number-input" type="text" name="" /><span>месяцев</span></label></div>
               </div>
               <div class="assess__form-block assess__form-block_width-1">
                 <h5 class="assess__form-block-title">2. На каком основании требуется задолженность?</h5>
@@ -191,7 +191,7 @@
                   </div>
                 </div>
               </div>
-              <div class="assess__form-block assess__form-block_width-2">
+              <div class="assess__form-block">
                 <h5 class="assess__form-block-title">3. На какой стадии находится иск?</h5>
                 <div class="assess__form-block-row">
                   <div class="assess__form-block-col">
@@ -213,11 +213,11 @@
                   </div>
                 </div>
               </div>
-              <div class="assess__form-block assess__form-block_width-3">
+              <div class="assess__form-block assess__form-block_width-2">
                 <h5 class="assess__form-block-title">4. ИНН вашего должника (если есть)</h5>
-                <div class="form-field ask__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ИНН" /></div>
+                <div class="form-field ask__form-field"><input class="form-field__input js-number-input" type="text" name="" placeholder="Введите ИНН" /></div>
               </div>
-              <div class="assess__form-block assess__form-block_width-3">
+              <div class="assess__form-block assess__form-block_width-2">
                 <h5 class="assess__form-block-title">5. Укажите ваши контактные данные:</h5>
                 <div class="form-field ask__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваше имя" /></div>
                 <div class="form-field ask__form-field"><input class="form-field__input js-tel-input" type="tel" name="" placeholder="Введите ваш телефон" />
@@ -225,7 +225,7 @@
                 </div>
                 <div class="form-field ask__form-field"><input class="form-field__input" type="email" name="" placeholder="Введите вашу почту" /></div>
               </div>
-              <div class="assess__form-actions assess__form-actions_width-3"><button class="btn btn_ls assess__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
+              <div class="assess__form-actions assess__form-actions_width-2"><button class="btn btn_ls assess__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                   <div class="btn__decor"></div>
                 </button>
                 <div class="check-box"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
@@ -236,15 +236,117 @@
             <div class="assess__result">
               <div class="assess__result-inner">
                 <div class="assess__result-header">
-                  <div class="assess__result-descr">Стоимость наших услуг составит:</div><span class="assess__result-title title-sm title-sm_red">25 000 руб</span>
+                  <div class="assess__result-descr">Стоимость наших услуг составит:</div>
                 </div>
-                <div class="assess__result-text">
-                  <div class="assess__result-text-title">15 000 руб</div>
-                  <div class="assess__result-text-descr">в течение 5 дней с момента вступления в силу решения суда</div>
+                <div class="assess__result-item is-active">
+                  <div class="assess__result-title title-sm title-sm_red">25 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">15 000 руб</div>
+                    <div class="assess__result-text-descr">в течение 5 дней с момента вступления в силу решения суда</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">10 000 руб</div>
+                    <div class="assess__result-text-descr">в течение 5 дней с момента поступления средств на ваш счет</div>
+                  </div>
                 </div>
-                <div class="assess__result-text">
-                  <div class="assess__result-text-title">10 000 руб</div>
-                  <div class="assess__result-text-descr">в течение 5 дней с момента поступления средств на ваш счет</div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">36 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">19 800 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">16 200 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">48 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">24 000 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">24 000 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">55 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">24 750 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">30 250 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">68 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">27 200 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">40 800 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">85 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">29 750 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">55 250 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">120 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">36 000 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">84 000 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">145 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">36 250 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">108 750 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">185 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">37 000 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">148 000 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">250 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">37 500 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">212 500 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">360 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">36 000 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">324 000 руб</div>
+                  </div>
+                </div>
+                <div class="assess__result-item">
+                  <div class="assess__result-title title-sm title-sm_red">460 000 руб</div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">23 000 руб</div>
+                  </div>
+                  <div class="assess__result-text">
+                    <div class="assess__result-text-title">437 000 руб</div>
+                  </div>
                 </div>
               </div>
             </div>

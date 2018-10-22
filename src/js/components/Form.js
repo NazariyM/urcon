@@ -6,6 +6,7 @@ class Form {
   constructor(formEl) {
     this.$form = $(formEl);
     this.$telInput = this.$form.find('.js-tel-input');
+    this.$numberInputs = this.$form.find('.js-number-input');
     this.$checkBoxField = this.$form.find('.check-box_has-field');
 
     this.init();
@@ -13,12 +14,12 @@ class Form {
 
   init() {
     this.maskInput();
+    this.checkNumber();
     this.checkBoxFieldListener();
     this.initThanksPop();
   }
 
   maskInput() {
-    const _this = this;
     const im = new Inputmask({
       mask: '+7 (999) 999-99-99',
       showMaskOnHover: false,
@@ -84,6 +85,18 @@ class Form {
       return false;
     } else {
       return true;
+    }
+  }
+
+  checkNumber() {
+    this.$numberInputs.each((i, el) => {
+      $(el).on('keypress', (e) => {
+        isNumberKey(e);
+      });
+    });
+
+    function isNumberKey(e) {
+      if (e.which < 48 || e.which > 57) e.preventDefault();
     }
   }
 }
