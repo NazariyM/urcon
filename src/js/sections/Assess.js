@@ -1,11 +1,14 @@
-import { css, getSiblings } from '../_helpers';
 import { TweenMax } from 'gsap';
 
 class Assess {
   constructor() {
     this.block = document.querySelector('.assess');
-    this.resultItems = this.block.querySelectorAll('.assess__result-item');
     this.input = this.block.querySelector('.js-debt-amount');
+    this.totalPrice = this.block.querySelector('.js-total-price');
+    this.firstPrice = this.block.querySelector('.js-first-price');
+    this.lastPrice = this.block.querySelector('.js-last-price');
+    this.resultBlock = this.block.querySelector('.assess__result');
+    this.priceListUrl = this.resultBlock.dataset.pricelistUrl;
 
     if (!this.block) return;
 
@@ -13,95 +16,121 @@ class Assess {
   }
 
   init() {
+    this.getPricesList()
+      .then(() => this.writePrice(this.checkCase()));
+
     this.bindEvents();
   }
 
   bindEvents() {
-    this.input.addEventListener('keyup', (e) => {
-      this.checkVal(e);
+    this.input.addEventListener('keyup', () => {
+      this.checkPrevValue();
+      this.resultBlock.dataset.activeCase = this.checkCase();
+      if (parseInt(this.activeCase) === this.checkCase()) return;
+
+      this.writePrice(this.checkCase());
     });
   }
 
-  checkVal(e, index) {
-    const input = e.target;
-    const value = input.value;
-    const case1 = (value >= 1000 && value <= 200000);
-    const case2 = (value >= 200001 && value <= 400000);
-    const case3 = (value >= 400001 && value <= 600000);
-    const case4 = (value >= 600001 && value <= 800000);
-    const case5 = (value >= 800001 && value <= 1000000);
-    const case6 = (value >= 1000001 && value <= 1500000);
-    const case7 = (value >= 1500001 && value <= 2000000);
-    const case8 = (value >= 2000001 && value <= 3000000);
-    const case9 = (value >= 3000001 && value <= 5000000);
-    const case10 = (value >= 5000001 && value <= 7500000);
-    const case11 = (value >= 7500001 && value <= 10000000);
-    const case12 = (value > 10000000);
+  getPricesList() {
+    return fetch(this.priceListUrl)
+      .then(response => response.json())
+      .then(data => {
+        this.pricesList = data;
+      }).catch(err => {
+        throw new Error('price list not found.');
+      });
+  }
+
+  checkCase() {
+    const value = this.input.value;
+    const case_1 = (value >= 1000 && value <= 200000);
+    const case_2 = (value >= 200001 && value <= 400000);
+    const case_3 = (value >= 400001 && value <= 600000);
+    const case_4 = (value >= 600001 && value <= 800000);
+    const case_5 = (value >= 800001 && value <= 1000000);
+    const case_6 = (value >= 1000001 && value <= 1500000);
+    const case_7 = (value >= 1500001 && value <= 2000000);
+    const case_8 = (value >= 2000001 && value <= 3000000);
+    const case_9 = (value >= 3000001 && value <= 5000000);
+    const case_10 = (value >= 5000001 && value <= 7500000);
+    const case_11 = (value >= 7500001 && value <= 10000000);
+    const case_12 = (value > 10000000);
+    let index;
 
     switch (true) {
-      case case1:
-        index = 0;
-        break;
-      case case2:
+      case case_1:
         index = 1;
         break;
-      case case3:
+      case case_2:
         index = 2;
         break;
-      case case4:
+      case case_3:
         index = 3;
         break;
-      case case5:
+      case case_4:
         index = 4;
         break;
-      case case6:
+      case case_5:
         index = 5;
         break;
-      case case7:
+      case case_6:
         index = 6;
         break;
-      case case8:
+      case case_7:
         index = 7;
         break;
-      case case9:
+      case case_8:
         index = 8;
         break;
-      case case10:
+      case case_9:
         index = 9;
         break;
-      case case11:
+      case case_10:
         index = 10;
         break;
-      case case12:
+      case case_11:
         index = 11;
+        break;
+      case case_12:
+        index = 12;
         break;
 
       default:
-        index = 0;
+        index = 1;
     }
-
-    this.resultItems[index].classList.add(css.active);
-
-    const siblings = getSiblings(this.resultItems[index]);
-    for (const sibling of siblings) sibling.classList.remove(css.active);
+    return index;
   }
 
-  animateNumbers() {
-    const elem = $('[data-anim-count]');
+  writePrice(currentIdx) {
+    let total = parseInt(this.pricesList[`case_${currentIdx}`].total.replace(/\s/g,''));
+    let first = parseInt(this.pricesList[`case_${currentIdx}`].first.replace(/\s/g,''));
+    let last = parseInt(this.pricesList[`case_${currentIdx}`].last.replace(/\s/g,''));
 
-    elem.each(function (index, item) {
-      const $this = $(this);
-      let number = parseInt($this.text());
-      let counter = {var: 0};
+    let counter = { var1: 0, var2: 0, var3: 0 };
+    TweenMax.to(counter, 1, {
+      var1: total,
+      var2: first,
+      var3: last,
+      onUpdate: () => {
+        this.totalPrice.textContent = Math.ceil(counter.var1);
+        this.firstPrice.textContent = Math.ceil(counter.var2);
+        this.lastPrice.textContent = Math.ceil(counter.var3);
+      },
+      ease: Circ.easeOut
+    });
+  }
 
-      TweenMax.to(counter, 4, {
-        var: number,
-        onUpdate: function () {
-          $this.html(Math.ceil(counter.var));
-        },
-        ease: Circ.easeOut
+  checkPrevValue() {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        this.activeCase = mutation.oldValue;
       });
     });
+
+    const config = { attributeOldValue: true };
+
+    observer.observe(this.resultBlock, config);
   }
 }
 

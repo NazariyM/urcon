@@ -97,7 +97,7 @@ block content
 							+b.form-field._has-label.assess__form-field
 								+e.LABEL.label
 									+e.SPAN.label-descr Сумма задолженности
-									+e.INPUT.input.js-debt-amount(class='js-number-input' type='text' name='debt-amount' pattern='[0-9]')
+									+e.INPUT.input.js-debt-amount(class='js-number-input' type='text' name='debt-amount' pattern='[0-9]' value='1000')
 									+e.SPAN: +i('rubl-2')
 							+b.form-field._has-label.assess__form-field
 								+e.LABEL.label
@@ -160,96 +160,27 @@ block content
 									= ' '
 									a.check-box__link.link-decor(href='#!') политикой конфиденциальности
 
-					+e.result
+					+e.result(data-pricelist-url='../data/prices.json' data-active-case='1')
 						+e.result-inner
 							+e.result-header
 								+e.result-descr Стоимость наших услуг составит:
 
-							+e.result-item.is-active
-								+e.DIV.result-title.title-sm._red 25 000 руб
-								+e.result-text
-									+e.result-text-title 15 000 руб
-									+e.result-text-descr в течение 5 дней с момента вступления в силу решения суда
-								+e.result-text
-									+e.result-text-title 10 000 руб
-									+e.result-text-descr в течение 5 дней с момента поступления средств на ваш счет
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 36 000 руб
-								+e.result-text
-									+e.result-text-title 19 800 руб
-								+e.result-text
-									+e.result-text-title 16 200 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 48 000 руб
-								+e.result-text
-									+e.result-text-title 24 000 руб
-								+e.result-text
-									+e.result-text-title 24 000 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 55 000 руб
-								+e.result-text
-									+e.result-text-title 24 750 руб
-								+e.result-text
-									+e.result-text-title 30 250 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 68 000 руб
-								+e.result-text
-									+e.result-text-title 27 200 руб
-								+e.result-text
-									+e.result-text-title 40 800 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 85 000 руб
-								+e.result-text
-									+e.result-text-title 29 750 руб
-								+e.result-text
-									+e.result-text-title 55 250 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 120 000 руб
-								+e.result-text
-									+e.result-text-title 36 000 руб
-								+e.result-text
-									+e.result-text-title 84 000 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 145 000 руб
-								+e.result-text
-									+e.result-text-title 36 250 руб
-								+e.result-text
-									+e.result-text-title 108 750 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 185 000 руб
-								+e.result-text
-									+e.result-text-title 37 000 руб
-								+e.result-text
-									+e.result-text-title 148 000 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 250 000 руб
-								+e.result-text
-									+e.result-text-title 37 500 руб
-								+e.result-text
-									+e.result-text-title 212 500 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 360 000 руб
-								+e.result-text
-									+e.result-text-title 36 000 руб
-								+e.result-text
-									+e.result-text-title 324 000 руб
-
-							+e.result-item
-								+e.DIV.result-title.title-sm._red 460 000 руб
-								+e.result-text
-									+e.result-text-title 23 000 руб
-								+e.result-text
-									+e.result-text-title 437 000 руб
+							+e.DIV.result-title.title-sm._red
+								span.js-total-price
+								= ' '
+								| руб
+							+e.result-text
+								+e.result-text-title
+									span.js-first-price
+									= ' '
+									| руб
+								+e.result-text-descr в течение 5 дней с момента вступления в силу решения суда
+							+e.result-text
+								+e.result-text-title
+									span.js-last-price
+									= ' '
+									| руб
+								+e.result-text-descr в течение 5 дней с момента поступления средств на ваш счет
 
 		//end assess
 
