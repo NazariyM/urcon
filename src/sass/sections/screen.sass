@@ -1,7 +1,11 @@
 .screen
    &__content
       position: relative
-      height: 487px
+      padding: 220px 0 140px
+      +sm
+         padding: 170px 0 140px
+      +xs
+         padding: 140px 0 140px
       &::after
          position: absolute
          top: 100%
@@ -22,6 +26,8 @@
       text-align: center
    &__btn
       min-width: 410px
+      +xs
+         min-width: 0
    &__benefits
       position: relative
       z-index: 1
@@ -33,13 +39,21 @@
    background: $white
    border: 1px solid #DCB385
    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
+   +sm
+      padding: 50px 0
+   &__row
+      margin: 0 -10px
    &__item
       $parent: &
       position: relative
       text-align: center
       line-height: 17px
       color: #363C43
+      +sm
+         padding: 0 10px
       &:not(:last-child)
+         +xs
+            margin-bottom: 50px
          &::after
             position: absolute
             top: -18px
@@ -54,6 +68,10 @@
       &:nth-child(2)
          &::after
             right: -10px
+            +md
+               right: 0
+            +sm
+               right: -10px
          .diamond-shape__title
             font-size: 48px
       &-diamond

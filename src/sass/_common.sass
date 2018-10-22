@@ -22,6 +22,8 @@ body
 .row
    display: flex
    margin: 0 -15px
+   +xs
+      flex-wrap: wrap
 
 .col
    padding: 0 15px
@@ -31,6 +33,9 @@ body
       +xs
          flex: 1 1 auto
          width: 100%
+      &:not(:last-child)
+         +xs
+            margin-bottom: 40px
 
 .main
    display: block
@@ -50,6 +55,8 @@ body
    color: #fff
    text-transform: uppercase
    transition: .3s ease-in-out
+   +xs
+      padding: 15px
    &:hover
       background-color: darken(#D5B893, 12)
       &::before

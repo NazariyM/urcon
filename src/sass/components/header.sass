@@ -1,26 +1,54 @@
 .header
    $parent: &
+   position: fixed
+   top: 0
+   left: 0
+   width: 100%
+   z-index: 100
    padding: 7px 0
-   //height: 84px
-   //height: 70px
+   background-color: $white
+   transition: .3s ease-in-out
+   +xs
+      padding: 5px 0
+   &.is-fixed
+      padding: 0
+      box-shadow: 0 0 7px rgba(#d5b893, .5)
+      +xs
+         padding: 5px 0
    &__container
       display: flex
       align-items: center
       justify-content: space-between
       max-width: 1230px
    &__logo
+      +xs
+         flex: 0 1 90px
    &__nav
       margin-left: 30px
+      +md
+         margin-left: 0
    &__contact
       display: flex
       flex-direction: column
       margin-right: 17px
       letter-spacing: 0
+      +sm
+         margin: 0 30px 0 auto
+         align-items: flex-end
+      +xs
+         margin: 0 17px 0 auto
       &-tel
          margin-bottom: 2px
          +f('pn800', 18, 22)
          color: #000
+         +xs
+            margin-bottom: 0
+            font-size: 16px
+            line-height: 16px
+   
       &-link
          margin-left: 2px
          +f('pn600', 12, 15)
          color: #E21C21
+         +xs
+            display: none

@@ -2,6 +2,7 @@
    padding: 56px 0 110px
    +xs
       padding: 55px 0 60px
+      background-position: 41% 50%
    &__title
       padding-left: 40px
       margin-bottom: 88px
@@ -40,9 +41,6 @@
             flex: 1 1 auto
             width: 100%
             padding: 0 15px
-      &:not(:last-child)
-         +xs
-            margin-bottom: 30px
    
       &-title
          margin-bottom: 20px
@@ -68,3 +66,6 @@
       &-descr
          +f('pn600', 14, 17)
          color: $white
+         +xs
+            max-width: 328px
+            margin: 0 auto

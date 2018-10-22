@@ -5,10 +5,6 @@
 			+e.IMG(src='img/other/logo.svg' alt='ЮРКОН')
 
 		+b.nav.header__nav
-			+e.BUTTON.btn
-				+e.SPAN.btn-burger
-					+e.SPAN.btn-lines
-
 			+e.NAV.body
 				-
 					navList = [
@@ -22,7 +18,12 @@
 				+e.UL.list
 					for navLink in navList
 						+e.LI.list-item: +e.A.list-link(href=`#${navLink[1]}`)= navLink[0]
+
 		+e.contact
 			+e.A.contact-tel(href='tel:+74954610461') +7 (495) 461-0-461
 			+e.A.contact-link(href='#!') ЗАКАЗАТЬ ЗВОНОК
+
+		+b.BUTTON.nav-btn
+			+e.SPAN.burger
+				+e.SPAN.lines
 //end header

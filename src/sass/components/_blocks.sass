@@ -12,6 +12,9 @@
       +f('pn700', 27, 33, 22)
       color: #21262D
       text-transform: uppercase
+      +xs
+         font-size: 26px
+         line-height: 32px
       #{$parent}_color-1 &
          color: #21262D
       #{$parent}_color-2 &
@@ -22,6 +25,13 @@
          font-size: 38px
          line-height: 46px
          letter-spacing: 0.32px
+         +xs
+            font-size: 28px
+            line-height: 36px
+            letter-spacing: 0
+         +r(374)
+            font-size: 27px
+            line-height: 34px
    &__descr
       margin-top: 6px
       +f('pn600', 13, 23, 22)

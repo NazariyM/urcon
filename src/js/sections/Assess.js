@@ -3,6 +3,8 @@ import { TweenMax } from 'gsap';
 class Assess {
   constructor() {
     this.block = document.querySelector('.assess');
+
+    if (!this.block) return;
     this.input = this.block.querySelector('.js-debt-amount');
     this.totalPrice = this.block.querySelector('.js-total-price');
     this.firstPrice = this.block.querySelector('.js-first-price');
@@ -10,8 +12,6 @@ class Assess {
     this.resultBlock = this.block.querySelector('.assess__result');
     this.priceListUrl = this.resultBlock.dataset.pricelistUrl;
     this.activeCase = 1;
-
-    if (!this.block) return;
 
     this.init();
   }
