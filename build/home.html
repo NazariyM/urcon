@@ -12,16 +12,16 @@
   <body>
     <!--begin header-->
     <header class="header">
-      <div class="header__container container"><a class="header__logo" href="#!"><img src="img/other/logo.svg" alt="ЮРКОН" title="" /></a>
+      <div class="header__container container"><a class="header__logo logo" href="#!"><img src="img/other/logo.svg" alt="ЮРКОН" title="" /></a>
         <div class="nav header__nav"><button class="nav__btn"><span class="nav__btn-burger"><span class="nav__btn-lines"></span></span></button>
           <nav class="nav__body">
             <ul class="nav__list">
               <li class="nav__list-item"><a class="nav__list-link" href="#screen">Главная</a></li>
-              <li class="nav__list-item"><a class="nav__list-link" href="#advantages">решения</a></li>
-              <li class="nav__list-item"><a class="nav__list-link" href="#faq">преимущества</a></li>
-              <li class="nav__list-item"><a class="nav__list-link" href="#solutions">получить оценку</a></li>
-              <li class="nav__list-item"><a class="nav__list-link" href="#config">о компании</a></li>
-              <li class="nav__list-item"><a class="nav__list-link" href="#contacts">Контакты</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#solutions">решения</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#advantages">преимущества</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#assess">получить оценку</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#about">о компании</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#footer">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -32,7 +32,7 @@
     <!--begin main-->
     <main class="main">
       <!--begin screen-->
-      <section class="screen">
+      <section class="screen" id="screen">
         <div class="screen__content has-bg has-bg_1" style="background-image: url(img/bg/screen_bg.jpg)">
           <div class="screen__container container">
             <div class="section-title section-title_lg section-title_color-1 screen__title">
@@ -71,7 +71,7 @@
       </section>
       <!--end screen-->
       <!--begin solutions-->
-      <section class="solutions">
+      <section class="solutions" id="solutions">
         <div class="solutions__container container">
           <div class="section-title section-title_color-1 solutions__title">
             <h2 class="section-title__text">Найдите себя</h2>
@@ -111,7 +111,7 @@
       </section>
       <!--end solutions-->
       <!--begin advantages-->
-      <section class="advantages has-bg has-bg_2" style="background-image: url(img/bg/advantages_bg.jpg)">
+      <section class="advantages has-bg has-bg_2" id="advantages" style="background-image: url(img/bg/advantages_bg.jpg)">
         <div class="advantages__container container">
           <div class="section-title section-title_color-2 advantages__title">
             <h2 class="section-title__text">5 причин сотрудничать с ЮРКОН</h2>
@@ -147,7 +147,7 @@
       </section>
       <!--end advantages-->
       <!--begin assess-->
-      <section class="assess">
+      <section class="assess" id="assess">
         <div class="assess__container container">
           <div class="section-title section-title_color-1 assess__title">
             <h2 class="section-title__text">Узнайте, сможем ли мы взять ваше дело</h2>
@@ -228,7 +228,7 @@
               <div class="assess__form-actions assess__form-actions_width-3"><button class="btn btn_ls assess__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                   <div class="btn__decor"></div>
                 </button>
-                <div class="check-box assess__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked">
+                <div class="check-box"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
                     <div class="check-box__visual"></div>
                   </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
               </div>
@@ -253,7 +253,7 @@
       </section>
       <!--end assess-->
       <!--begin about-->
-      <section class="about">
+      <section class="about" id="about">
         <div class="about__container container">
           <div class="section-title section-title_color-1 about__title">
             <h2 class="section-title__text">О компании</h2>
@@ -291,7 +291,7 @@
       </section>
       <!--end about-->
       <!--begin why-us-->
-      <section class="why-us has-bg has-bg_3" style="background-image: url(img/bg/why-us_bg.jpg)">
+      <section class="why-us has-bg has-bg_3" id="why-us" style="background-image: url(img/bg/why-us_bg.jpg)">
         <div class="why-us__container container">
           <div class="section-title section-title_color-2 why-us__title">
             <h2 class="section-title__text">ПОЧЕМУ ТАК ВАЖНО РАБОТАТЬ ИСКЛЮЧИТЕЛЬНО С ПРОФЕССИОНАЛАМИ</h2>
@@ -329,18 +329,18 @@
       </section>
       <!--end why-us-->
       <!--begin service-->
-      <section class="service">
+      <section class="service" id="service">
         <div class="service__container container">
           <div class="section-title section-title_color-1 service__title">
             <h2 class="section-title__text">контрагенты часто задерживают оплату?</h2>
             <p class="section-title__descr">абонентское юридическое обслуживание</p>
           </div>
           <div class="service__row row">
-            <div class="service__text">
+            <div class="service__text service__col">
               <p class="service__descr">Услуги юридического аутсорсинга - предназначена для компаний малого и среднего сегмента бизнеса, у которых слишком часто возникают юридический споры с контрагентами.</p>
-              <div class="service__list">
+              <div class="service__list-wrap">
                 <h4 class="service__list-title">В услугу входит:</h4>
-                <ul class="service__list-body">
+                <ul class="service__list">
                   <li>Неограниченное количество проверок и составления договоров</li>
                   <li>Информирование о платежеспособности контрагентов</li>
                   <li>Неограниченное количество консультаций, составления претензий и исков</li>
@@ -349,22 +349,22 @@
                 </ul>
               </div>
             </div>
-            <div class="service__form-wrap">
-              <form action="#!" method="POST">
-                <div class="service__head-text">
+            <div class="service__col">
+              <form class="service__form js-form" action="#!" method="POST">
+                <div class="service__form-header">
                   <div class="service__form-title title-sm title-sm_red">от 15000 руб/месяц</div>
                   <p class="service__form-descr">Оставьте заявку и рассчитайте стоимость вашего обслуживания</p>
                 </div>
                 <div class="form-field service__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваше имя" /></div>
-                <div class="form-field service__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваш телефон" />
+                <div class="form-field service__form-field"><input class="form-field__input js-tel-input" type="tel" name="" placeholder="Введите ваш телефон" />
                   <div class="form-field__error">Обязательно для заполнения</div>
                 </div>
-                <div class="service__form-actions"><button class="btn service__form-submit" type="submit"><span>УЗНАТЬ СТОИМОСТЬ</span>
+                <div class="service__form-actions"><button class="btn btn_ls service__form-submit" type="submit"><span>УЗНАТЬ СТОИМОСТЬ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box service__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
+                  <div class="check-box"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки персональных данных и<a class="check-box__link link-decor" href="#!"> политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
                 </div>
               </form>
             </div>
@@ -378,27 +378,27 @@
           <div class="section-title section-title_color-1 ask__title">
             <h2 class="section-title__text">Остались вопросы?</h2>
           </div>
-          <p class="ask__descr">Звоните по телефону<a class="ask__descr-link" href="#!">+7 (495) 461-0-461</a> или задайте ваш вопрос в форме ниже</p>
-          <form class="ask__form" action="#!" method="POST">
-            <div class="ask__row row">
-              <div class="ask__col">
+          <p class="ask__descr">Звоните по телефону <a class="ask__descr-link" href="#!">+7 (495) 461-0-461</a> или задайте ваш вопрос в форме ниже</p>
+          <form class="ask__form js-form" action="#!" method="POST">
+            <div class="ask__form-row row">
+              <div class="ask__form-col">
                 <div class="form-field ask__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваше имя" /></div>
-                <div class="form-field ask__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваш телефон" />
+                <div class="form-field ask__form-field"><input class="form-field__input js-tel-input" type="tel" name="" placeholder="Введите ваш телефон" />
                   <div class="form-field__error">Обязательно для заполнения</div>
                 </div>
                 <div class="form-field ask__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите вашу почту" /></div>
               </div>
-              <div class="ask__col">
+              <div class="ask__form-col">
                 <div class="form-field ask__form-field"><textarea class="form-field__textarea textarea" placeholder="Опишите вашу проблему"></textarea></div>
               </div>
             </div>
-            <div class="ask__form-actions">
-              <div class="ask__form-actions-col">
-                <div class="check-box ask__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
+            <div class="ask__form-actions ask__form-row row">
+              <div class="ask__form-col">
+                <div class="check-box ask__form-agree"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
                     <div class="check-box__visual"></div>
-                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки персональных данных и<a class="check-box__link link-decor" href="#!"> политикой конфиденциальности</a></span></div>
+                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
               </div>
-              <div class="ask__form-actions-col"><button class="btn ask__form-submit" type="submit"><span>получить консультацию</span>
+              <div class="ask__form-col"><button class="btn btn_ls ask__form-submit" type="submit"><span>получить консультацию</span>
                   <div class="btn__decor"></div>
                 </button></div>
             </div>
@@ -409,7 +409,54 @@
     </main>
     <!--end main-->
     <!--begin footer-->
-    <footer class="footer"></footer>
+    <footer class="footer" id="footer">
+      <div class="footer__top">
+        <div class="footer__container container"><a class="footer__logo logo" href="#!"><img src="img/other/logo.svg" alt="ЮРКОН" title="" /></a>
+          <div class="nav nav_footer">
+            <ul class="nav__list">
+              <li class="nav__list-item"><a class="nav__list-link" href="#screen">Главная</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#solutions">решения</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#advantages">преимущества</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#assess">получить оценку</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#about">о компании</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#footer">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="contact-block footer__contact-block">
+            <div class="contact-block__item"><svg width="17px" height="13px" viewBox="0 0 17 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Desktop-HD" transform="translate(-1091.000000, -6331.000000)">
+                    <g id="phone-ring-volume" transform="translate(1089.000000, 6328.000000)">
+                      <g id="Frame_-_24px">
+                        <rect id="Rectangle-path" x="0" y="0.0008" width="19" height="19.2"></rect>
+                      </g>
+                      <g id="Filled_Icons" transform="translate(2.000000, 3.000000)" fill="#E21C21" fill-rule="nonzero">
+                        <g id="Group">
+                          <path id="Shape" d="M15.9978095,9.3868125 L13.6728571,7.0549375 L13.6607143,7.067125 C10.523,4.158375 5.66747619,4.1575625 2.52814286,7.067125 L2.516,7.0549375 L0.191857143,9.3868125 C-0.063952381,9.644375 -0.063952381,10.0628125 0.191857143,10.3195625 L2.05214286,12.185875 C2.30957143,12.4434375 2.72404762,12.4434375 2.98147619,12.185875 L4.84095238,10.3195625 C5.09757143,10.0628125 5.09757143,9.644375 4.84095238,9.3868125 L3.92295238,8.4654375 C6.29,6.326125 9.89966667,6.326125 12.2667143,8.4654375 L11.3487143,9.3868125 C11.0929048,9.644375 11.0929048,10.0628125 11.3487143,10.3195625 L13.2081905,12.185875 C13.4648095,12.4434375 13.8809048,12.4434375 14.1383333,12.185875 L15.9978095,10.3195625 C16.2552381,10.0628125 16.2552381,9.644375 15.9978095,9.3868125 Z"></path>
+                          <polygon id="Rectangle-path" points="7.28571429 0.0008125 8.9047619 0.0008125 8.9047619 2.4383125 7.28571429 2.4383125"></polygon>
+                          <polygon id="Rectangle-path" transform="translate(14.105975, 3.718006) rotate(45.000000) translate(-14.105975, -3.718006) " points="13.2964589 2.49926746 14.915491 2.49926746 14.915491 4.93674408 13.2964589 4.93674408"></polygon>
+                          <polygon id="Rectangle-path" transform="translate(2.085311, 3.718436) rotate(44.987846) translate(-2.085311, -3.718436) " points="0.870951355 2.90588647 3.29967127 2.90588647 3.29967127 4.53098583 0.870951355 4.53098583"></polygon>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg><a class="contact-block__tel" href="tel:+74954610461">+7 (495) 461-0-461</a></div>
+            <div class="contact-block__item"><svg class="icon-email ">
+                <use xlink:href="img/sprite.svg#icon-email"></use>
+              </svg><a class="contact-block__mail" href="mailto:vip@urkonplus.ru">vip@urkonplus.ru</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__container container">
+          <p class="footer__copyright">© Все права защищены, ЮРКОН 2008 <a class="link-decor" href="#!">Политика конфиденциальности</a></p><button class="footer__scroll-top-btn scroll-top-btn"><span>Вернуться наверх</span><svg class="icon-arrows-top ">
+              <use xlink:href="img/sprite.svg#icon-arrows-top"></use>
+            </svg></button>
+          <div class="footer__dev">Разработка сайта <a href="#!" target="_blank">ADMD</a></div>
+        </div>
+      </div>
+    </footer>
     <!--end footer-->
     <!--+popup({ name: 'call-popup' })-->
     <!--LOAD SCRIPTS-->

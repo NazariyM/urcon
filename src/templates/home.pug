@@ -9,7 +9,7 @@ block content
 	main.main
 
 		//begin screen
-		+b.SECTION.screen
+		+b.SECTION.screen#screen
 			+e.content.has-bg._1(style=`background-image: url(img/bg/screen_bg.jpg)`)
 				+e.container.container
 					+sectTitle('_lg _color-1 screen__title', 'Законное взыскание долгов с юридических лиц с оплатой по факту зачисления на ваш счет', 'Для тех, кому нужны гарантии, а не юрист в штате', true)
@@ -34,7 +34,7 @@ block content
 		//end screen
 			
 		//begin solutions
-		+b.SECTION.solutions
+		+b.SECTION.solutions#solutions
 			+e.container.container
 				+sectTitle('_color-1 solutions__title', 'Найдите себя', 'Самые популярные проблемы малого и среднего бизнеса')
 				-
@@ -53,7 +53,7 @@ block content
 		//end solutions
 			
 		//begin advantages
-		+b.SECTION.advantages.has-bg._2(style=`background-image: url(img/bg/advantages_bg.jpg)`)
+		+b.SECTION.advantages.has-bg._2#advantages(style=`background-image: url(img/bg/advantages_bg.jpg)`)
 			+e.container.container
 				+sectTitle('_color-2 advantages__title', '5 причин сотрудничать с ЮРКОН', 'факты, отличающие нас от 90% конкурентов')
 				+e.row.row
@@ -86,7 +86,7 @@ block content
 		//end advantages
 			
 		//begin assess
-		+b.SECTION.assess
+		+b.SECTION.assess#assess
 			+e.container.container
 				+sectTitle('_color-1 assess__title', 'Узнайте, сможем ли мы взять ваше дело', 'Мы беремся только за 40% предлагаемых нам дел, так как мы предоставляем реальную гарантию, а не просто пишем о ней на сайте.')
 				+e.content
@@ -150,9 +150,9 @@ block content
 							+formField('ask__form-field', 'Введите вашу почту')(type='email')
 						+e.form-actions._width-3
 							+btn('_ls assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
-							.check-box.assess__form-check
+							.check-box
 								label.check-box__label
-									input.check-box__input(type='checkbox', name='', checked='checked')
+									input.check-box__input(type='checkbox', name='', checked='checked' required)
 									.check-box__visual
 								span.check-box__text
 									| Вы соглашаетесь с условиями обработки
@@ -176,7 +176,7 @@ block content
 		//end assess
 
 		//begin about
-		+b.SECTION.about
+		+b.SECTION.about#about
 			+e.container.container
 				+sectTitle('_color-1 about__title', 'О компании')
 				+e.text
@@ -199,7 +199,7 @@ block content
 		//end about
 			
 		//begin why-us
-		+b.SECTION.why-us.has-bg._3(style=`background-image: url(img/bg/why-us_bg.jpg)`)
+		+b.SECTION.why-us.has-bg._3#why-us(style=`background-image: url(img/bg/why-us_bg.jpg)`)
 			+e.container.container
 				+sectTitle('_color-2 why-us__title', 'ПОЧЕМУ ТАК ВАЖНО РАБОТАТЬ ИСКЛЮЧИТЕЛЬНО С ПРОФЕССИОНАЛАМИ')
 				+e.row.row
@@ -229,31 +229,40 @@ block content
 		//end why-us
 			
 		//begin service
-		+b.SECTION.service
+		+b.SECTION.service#service
 			+e.container.container
 				+sectTitle('_color-1 service__title', 'контрагенты часто задерживают оплату?', 'абонентское юридическое обслуживание')
 				+e.row.row
-					+e.text
+					+e.text.service__col
 						+e.P.descr Услуги юридического аутсорсинга - предназначена для компаний малого и среднего сегмента бизнеса, у которых слишком часто возникают юридический споры с контрагентами.
-						+e.list
+						+e.list-wrap
 							+e.H4.list-title В услугу входит:
-							+e.UL.list-body
+							+e.UL.list
 								li Неограниченное количество проверок и составления договоров
 								li Информирование о платежеспособности контрагентов
 								li Неограниченное количество консультаций, составления претензий и исков
 								li Представительство в арбитражных судах на всех стадиях процесса
 								li Ведение исполнительного производства и частичного документооборота
-					+e.form-wrap
-						+e.FORM(action='#!' method='POST')
-							+e.head-text
+					+e.col
+						+e.FORM.form.js-form(action='#!' method='POST')
+							+e.form-header
 								+e.form-title.title-sm._red от 15000 руб/месяц
 								+e.P.form-descr Оставьте заявку и рассчитайте стоимость вашего обслуживания
 
 							+formField('service__form-field', 'Введите ваше имя')
-							+formField('service__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')
+							+formField('service__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
 							+e.form-actions
-								+btn('service__form-submit', 'УЗНАТЬ СТОИМОСТЬ')(type='submit')
-								+checkBox('service__form-check', 'Вы соглашаетесь с условиями обработки персональных данных и', ' политикой конфиденциальности')
+								+btn('_ls service__form-submit', 'УЗНАТЬ СТОИМОСТЬ')(type='submit')
+								.check-box
+									label.check-box__label
+										input.check-box__input(type='checkbox', name='', checked='checked' required)
+										.check-box__visual
+									span.check-box__text
+										| Вы соглашаетесь с условиями обработки
+										br
+										| персональных данных и
+										= ' '
+										a.check-box__link.link-decor(href='#!') политикой конфиденциальности
 		//end service
 
 		//begin ask
@@ -261,24 +270,34 @@ block content
 			+e.container.container
 				+sectTitle('_color-1 ask__title', 'Остались вопросы?')
 				+e.P.descr Звоните по телефону
+					= ' '
 					+e.A.descr-link(href='#!') +7 (495) 461-0-461
 					=	' '
 					| или задайте ваш вопрос в форме ниже
 
-				+e.FORM.form(action='#!' method='POST')
-					+e.row.row
-						+e.col
+				+e.FORM.form.js-form(action='#!' method='POST')
+					+e.form-row.row
+						+e.form-col
 							+formField('ask__form-field', 'Введите ваше имя')
-							+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')
+							+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
 							+formField('ask__form-field', 'Введите вашу почту')
-						+e.col
+						+e.form-col
 							+formField('ask__form-field', 'Опишите вашу проблему', false, true)
 
-					+e.form-actions
-						+e.form-actions-col
-							+checkBox('ask__form-check', 'Вы соглашаетесь с условиями обработки персональных данных и', ' политикой конфиденциальности')
-						+e.form-actions-col
-							+btn('ask__form-submit', 'получить консультацию')(type='submit')
+					+e.form-actions.ask__form-row.row
+						+e.form-col
+							.check-box.ask__form-agree
+								label.check-box__label
+									input.check-box__input(type='checkbox', name='', checked='checked' required)
+									.check-box__visual
+								span.check-box__text
+									| Вы соглашаетесь с условиями обработки
+									br
+									| персональных данных и
+									= ' '
+									a.check-box__link.link-decor(href='#!') политикой конфиденциальности
+						+e.form-col
+							+btn('_ls ask__form-submit', 'получить консультацию')(type='submit')
 
 		//end ask
 			

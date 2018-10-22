@@ -1,3 +1,51 @@
 //begin footer
-+b.FOOTER.footer
++b.FOOTER.footer#footer
+	+e.top
+		+e.container.container
+			+e.A.logo.logo(href='#!')
+				+e.IMG(src='img/other/logo.svg' alt='ЮРКОН')
+			+b.nav._footer
+				-
+					navList = [
+					['Главная', 'screen'],
+					['решения', 'solutions'],
+					['преимущества', 'advantages'],
+					['получить оценку', 'assess'],
+					['о компании', 'about'],
+					['Контакты', 'footer']
+					]
+				+e.UL.list
+					for navLink in navList
+						+e.LI.list-item: +e.A.list-link(href=`#${navLink[1]}`)= navLink[0]
+			+b.contact-block.footer__contact-block
+				+e.item
+					svg(width='17px', height='13px', viewBox='0 0 17 13', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+						g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+							g#Desktop-HD(transform='translate(-1091.000000, -6331.000000)')
+								g#phone-ring-volume(transform='translate(1089.000000, 6328.000000)')
+									g#Frame_-_24px
+										rect#Rectangle-path(x='0', y='0.0008', width='19', height='19.2')
+									g#Filled_Icons(transform='translate(2.000000, 3.000000)', fill='#E21C21', fill-rule='nonzero')
+										g#Group
+											path#Shape(d='M15.9978095,9.3868125 L13.6728571,7.0549375 L13.6607143,7.067125 C10.523,4.158375 5.66747619,4.1575625 2.52814286,7.067125 L2.516,7.0549375 L0.191857143,9.3868125 C-0.063952381,9.644375 -0.063952381,10.0628125 0.191857143,10.3195625 L2.05214286,12.185875 C2.30957143,12.4434375 2.72404762,12.4434375 2.98147619,12.185875 L4.84095238,10.3195625 C5.09757143,10.0628125 5.09757143,9.644375 4.84095238,9.3868125 L3.92295238,8.4654375 C6.29,6.326125 9.89966667,6.326125 12.2667143,8.4654375 L11.3487143,9.3868125 C11.0929048,9.644375 11.0929048,10.0628125 11.3487143,10.3195625 L13.2081905,12.185875 C13.4648095,12.4434375 13.8809048,12.4434375 14.1383333,12.185875 L15.9978095,10.3195625 C16.2552381,10.0628125 16.2552381,9.644375 15.9978095,9.3868125 Z')
+											polygon#Rectangle-path(points='7.28571429 0.0008125 8.9047619 0.0008125 8.9047619 2.4383125 7.28571429 2.4383125')
+											polygon#Rectangle-path(transform='translate(14.105975, 3.718006) rotate(45.000000) translate(-14.105975, -3.718006) ', points='13.2964589 2.49926746 14.915491 2.49926746 14.915491 4.93674408 13.2964589 4.93674408')
+											polygon#Rectangle-path(transform='translate(2.085311, 3.718436) rotate(44.987846) translate(-2.085311, -3.718436) ', points='0.870951355 2.90588647 3.29967127 2.90588647 3.29967127 4.53098583 0.870951355 4.53098583')
+
+					+e.A.tel(href='tel:+74954610461') +7 (495) 461-0-461
+				+e.item
+					+i('email')
+					+e.A.mail(href='mailto:vip@urkonplus.ru') vip@urkonplus.ru
+
+	+e.bottom
+		+e.container.container
+			+e.P.copyright © Все права защищены, ЮРКОН 2008
+				= ' '
+				+b.A.link-decor(href='#!') Политика конфиденциальности
+			+e.BUTTON.scroll-top-btn.scroll-top-btn
+				span Вернуться наверх
+				+i('arrows-top')
+			+e.dev Разработка сайта
+				= ' '
+				a(href='#!' target='_blank') ADMD
 //end footer

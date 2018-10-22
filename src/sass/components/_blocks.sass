@@ -1,3 +1,9 @@
+// *** begin logo *** //
+.logo
+   display: block
+   flex: 0 0 107px
+   width: 107px
+// end logo //
 // *** begin section-title *** //
 .section-title
    $parent: &
@@ -77,3 +83,43 @@
       svg
          font-size: 30px
 // end diamond-shape //
+
+// *** begin contact-block *** //
+.contact-block
+   &__item
+      display: flex
+      align-items: center
+      justify-content: space-between
+      +f('pn700')
+      letter-spacing: 0
+      &:not(:last-child)
+         margin-bottom: 8px
+         
+      .icon-email
+         font-size: 16px
+   &__tel
+      font-size: 18px
+      line-height: 22px
+      color: #21262D
+   &__mail
+      font-size: 16px
+      line-height: 20px
+   
+// end contact-block //
+
+// *** begin scroll-top-btn *** //
+.scroll-top-btn
+   display: inline-flex
+   align-items: center
+   padding: 9px 14px 9px 22px
+   border-radius: 19px
+   background-color: #fff
+   &:hover
+      svg
+         animation: smallMoveUp .3s ease-in-out
+   span
+      margin-right: 20px
+      +f('man500', 11, 13)
+   svg
+      font-size: 18px
+// end scroll-top-btn //

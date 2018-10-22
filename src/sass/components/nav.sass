@@ -27,7 +27,9 @@
       visibility: visible
       transform: translate3d(0, 0, 0)
       transition: transform .4s ease, opacity .4s ease, visibility 0s 0s, -webkit-transform .4s ease
-   
+   &_footer
+      flex: 0 0 400px
+      width: 400px
    &__body
    
    &__list
@@ -42,6 +44,11 @@
          overflow: auto
          height: 100%
          padding: 0
+      #{$parent}_footer &
+         flex-wrap: wrap
+         flex-direction: column
+         align-items: flex-start
+         height: 50px
       &-item
          position: relative
          +sm
@@ -49,6 +56,8 @@
             opacity: 0
             transform: translateY(20px)
             transition: .3s ease-in-out
+         #{$parent}_footer &
+            margin: 0 0 5px
          .is-active &
             opacity: 1
             transform: translateY(0)
@@ -63,20 +72,9 @@
                content: ''
          &:not(:last-child)
             margin-right: 23px
-         &:not(:last-child)
-            &::after
-               position: absolute
-               top: 50%
-               width: 4px
-               right: -50px
-               height: 4px
-               margin-top: -2px
-               border-radius: 50%
-               background: rgba($white, .2)
-               content: ''
-               +sm
-                  display: none
-         
+            #{$parent}_footer &
+               margin-right: 0
+               
          $elements: 8
          @for $i from 0 to $elements
             &:nth-child(#{$i + 1})
@@ -102,6 +100,8 @@
             transition: .3s ease-in-out
             pointer-events: none
             content: ''
+            #{$parent}_footer &
+               display: none
          &:hover
             &::before
                transform: scaleX(0)

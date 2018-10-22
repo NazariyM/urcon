@@ -1,7 +1,7 @@
 //begin header
 +b.HEADER.header(class= headerClass)
 	+e.container.container
-		+e.A.logo(href='#!')
+		+e.A.logo.logo(href='#!')
 			+e.IMG(src='img/other/logo.svg' alt='ЮРКОН')
 
 		+b.nav.header__nav
@@ -13,11 +13,11 @@
 				-
 					navList = [
 					['Главная', 'screen'],
-					['решения', 'advantages'],
-					['преимущества', 'faq'],
-					['получить оценку', 'solutions'],
-					['о компании', 'config'],
-					['Контакты', 'contacts']
+					['решения', 'solutions'],
+					['преимущества', 'advantages'],
+					['получить оценку', 'assess'],
+					['о компании', 'about'],
+					['Контакты', 'footer']
 					]
 				+e.UL.list
 					for navLink in navList
