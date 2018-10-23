@@ -29,6 +29,8 @@
       #{$parent}_has-label &
          flex: 0 0 200px
          margin: 0 11px
+         +xs
+            margin: 0 11px 0 0
       &.is-disabled
          pointer-events: none
       
@@ -76,10 +78,23 @@
       align-items: center
       +f('man600', 13, 23)
       color: #6D788C
+      +xs
+         position: relative
+         flex-wrap: wrap
       &-descr
          flex: 0 0 166px
          width: 166px
          letter-spacing: 0
+         +xs
+            flex: 0 1 auto
+            width: 100%
+            margin-bottom: 10px
+      &-value
+         +xs
+            position: absolute
+            left: 210px
+            bottom: 11px
+            font-size: 11px
       svg
          fill: #6D788C
       .icon-rubl-2
@@ -100,6 +115,8 @@
          display: inline-flex
          align-items: center
          margin-right: 0
+         +xs
+            width: 100%
    &__visual
       position: relative
       flex: 0 0 24px
@@ -149,6 +166,8 @@
          transform: scale(1)
       &-wrap
          position: relative
+         +xs
+            flex: 1
       &-text
          position: absolute
          left: 15px

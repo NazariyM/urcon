@@ -21,6 +21,7 @@ class Assess {
       .then(() => this.writePrice(this.checkCase()));
 
     this.bindEvents();
+    if (window.matchMedia('(max-width: 1023px)').matches) this.appendResultBlock();
   }
 
   bindEvents() {
@@ -132,6 +133,12 @@ class Assess {
     const config = { attributeOldValue: true };
 
     observer.observe(this.resultBlock, config);
+  }
+
+  appendResultBlock() {
+    const formActs = this.block.querySelector('.assess__form-actions');
+
+    formActs.prepend(this.resultBlock);
   }
 }
 

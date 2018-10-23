@@ -147,101 +147,111 @@
       </section>
       <!--end advantages-->
       <!--begin assess-->
-      <!--+b.SECTION.assess#assess+e.container.container
-	+sectTitle('_color-1 assess__title', 'Узнайте, сможем ли мы взять ваше дело', 'Мы беремся только за 40% предлагаемых нам дел, так как мы предоставляем реальную гарантию, а не просто пишем о ней на сайте.')
-	+e.content
-		+e.H3.content-title Заполните форму ниже максимально подробно и узнайте, смогут ли наши юристы помочь вам
-		+e.FORM.form.js-form(action='#!' method='POST')
-			+e.form-block
-				+e.H5.form-block-title 1. Укажите детали вашего дела
-				+b.form-field._has-label.assess__form-field
-					+e.LABEL.label
-						+e.SPAN.label-descr Сумма задолженности
-						+e.INPUT.input.js-debt-amount(class='js-number-input' type='text' name='debt-amount' value='1000')
-						+e.SPAN: +i('rubl-2')
-				+b.form-field._has-label.assess__form-field
-					+e.LABEL.label
-						+e.SPAN.label-descr Срок задолженности
-						+e.INPUT.input(class='js-number-input' type='text' name='')
-						+e.SPAN месяцев
-
-			+e.form-block._width-1
-				+e.H5.form-block-title 2. На каком основании требуется задолженность?
-				+e.form-block-row
-					+e.form-block-col
-						+checkBox('_radio assess__form-check-box', 'Договор поставки', false, true)(name='radio-1' checked)
-						+checkBox('_radio assess__form-check-box', 'Договор оказания услуг', false, true)(name='radio-1')
-						+checkBox('_radio assess__form-check-box', 'Договор подряда', false, true)(name='radio-1')
-					+e.form-block-col
-						+checkBox('_radio assess__form-check-box', 'Договор аренды', false, true)(name='radio-1')
-						+checkBox('_radio assess__form-check-box', 'Гос. контакт', false, true)(name='radio-1')
-						.check-box.check-box_radio.check-box_has-field.assess__form-check-box
-							label.check-box__label
-								input.check-box__input(type='radio', name='radio-1')
-								.check-box__visual
-								.check-box__input-wrap
-									span.check-box__input-text Другое:
-									input.check-box__field-input.is-disabled(type='text' name='' placeholder='' readonly)
-
-			+e.form-block._width-2
-				+e.H5.form-block-title 3. На какой стадии находится иск?
-				+e.form-block-row
-					+e.form-block-col
-						+checkBox('_radio assess__form-check-box', 'Досудебная (ведутся переговоры)', false, true)(name='radio-2' checked)
-						+checkBox('_radio assess__form-check-box', 'Судебная (подан иск)', false, true)(name='radio-2')
-					+e.form-block-col
-						+checkBox('_radio assess__form-check-box', 'Есть решение суда', false, true)(name='radio-2')
-						.check-box.check-box_radio.check-box_has-field.assess__form-check-box
-							label.check-box__label
-								input.check-box__input(type='radio', name='radio-2')
-								.check-box__visual
-								.check-box__input-wrap
-									span.check-box__input-text Другое:
-									input.check-box__field-input.is-disabled(type='text' name='' placeholder='' readonly)
-
-			+e.form-block._width-3
-				+e.H5.form-block-title 4. ИНН вашего должника (если есть)
-				+formField('ask__form-field', 'Введите ИНН')(class='js-number-input')
-			+e.form-block._width-3
-				+e.H5.form-block-title 5. Укажите ваши контактные данные:
-				+formField('ask__form-field', 'Введите ваше имя')
-				+formField('ask__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
-				+formField('ask__form-field', 'Введите вашу почту')(type='email')
-			+e.form-actions._width-3
-				+btn('_ls assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
-				.check-box
-					label.check-box__label
-						input.check-box__input(type='checkbox', name='', checked='checked' required)
-						.check-box__visual
-					span.check-box__text
-						| Вы соглашаетесь с условиями обработки
-						br
-						| персональных данных и
-						= ' '
-						a.check-box__link.link-decor(href='#!') политикой конфиденциальности
-
-		+e.result(data-pricelist-url='../data/prices.json' data-active-case='1')
-			+e.result-inner
-				+e.result-header
-					+e.result-descr Стоимость наших услуг составит:
-
-				+e.DIV.result-title.title-sm._red
-					span.js-total-price
-					= ' '
-					| руб
-				+e.result-text
-					+e.result-text-title
-						span.js-first-price
-						= ' '
-						| руб
-					+e.result-text-descr в течение 5 дней с момента вступления в силу решения суда
-				+e.result-text
-					+e.result-text-title
-						span.js-last-price
-						= ' '
-						| руб
-					+e.result-text-descr в течение 5 дней с момента поступления средств на ваш счет
--->
+      <section class="assess" id="assess">
+        <div class="assess__container container">
+          <div class="section-title section-title_color-1 assess__title">
+            <h2 class="section-title__text">Узнайте, сможем ли мы взять ваше дело</h2>
+            <p class="section-title__descr">Мы беремся только за 40% предлагаемых нам дел, так как мы предоставляем реальную гарантию, а не просто пишем о ней на сайте.</p>
+          </div>
+          <div class="assess__content">
+            <h3 class="assess__content-title">Заполните форму ниже максимально подробно и узнайте, смогут ли наши юристы помочь вам</h3>
+            <form class="assess__form js-form" action="#!" method="POST">
+              <div class="assess__form-block">
+                <h5 class="assess__form-block-title">1. Укажите детали вашего дела</h5>
+                <div class="form-field form-field_has-label assess__form-field"><label class="form-field__label"><span class="form-field__label-descr">Сумма задолженности</span><input class="form-field__input js-debt-amount js-number-input" type="text" name="debt-amount" value="1000" /><span><svg class="icon-rubl-2 ">
+                        <use xlink:href="img/sprite.svg#icon-rubl-2"></use>
+                      </svg></span></label></div>
+                <div class="form-field form-field_has-label assess__form-field"><label class="form-field__label"><span class="form-field__label-descr">Срок задолженности</span><input class="form-field__input js-number-input" type="text" name="" /><span class="form-field__label-value">месяцев</span></label></div>
+              </div>
+              <div class="assess__form-block assess__form-block_width-1">
+                <h5 class="assess__form-block-title">2. На каком основании требуется задолженность?</h5>
+                <div class="assess__form-block-row">
+                  <div class="assess__form-block-col">
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-1" checked="checked" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Договор поставки</span>
+                      </label></div>
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-1" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Договор оказания услуг</span>
+                      </label></div>
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-1" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Договор подряда</span>
+                      </label></div>
+                  </div>
+                  <div class="assess__form-block-col">
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-1" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Договор аренды</span>
+                      </label></div>
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-1" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Гос. контакт</span>
+                      </label></div>
+                    <div class="check-box check-box_radio check-box_has-field assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-1">
+                        <div class="check-box__visual"></div>
+                        <div class="check-box__input-wrap"><span class="check-box__input-text">Другое:</span><input class="check-box__field-input is-disabled" type="text" name="" placeholder="" readonly></div>
+                      </label></div>
+                  </div>
+                </div>
+              </div>
+              <div class="assess__form-block assess__form-block_width-2">
+                <h5 class="assess__form-block-title">3. На какой стадии находится иск?</h5>
+                <div class="assess__form-block-row">
+                  <div class="assess__form-block-col">
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-2" checked="checked" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Досудебная (ведутся переговоры)</span>
+                      </label></div>
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-2" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Судебная (подан иск)</span>
+                      </label></div>
+                  </div>
+                  <div class="assess__form-block-col">
+                    <div class="check-box check-box_radio assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-2" />
+                        <div class="check-box__visual"></div><span class="check-box__text">Есть решение суда</span>
+                      </label></div>
+                    <div class="check-box check-box_radio check-box_has-field assess__form-check-box"><label class="check-box__label"><input class="check-box__input" type="radio" name="radio-2">
+                        <div class="check-box__visual"></div>
+                        <div class="check-box__input-wrap"><span class="check-box__input-text">Другое:</span><input class="check-box__field-input is-disabled" type="text" name="" placeholder="" readonly></div>
+                      </label></div>
+                  </div>
+                </div>
+              </div>
+              <div class="assess__form-block assess__form-block_width-3">
+                <h5 class="assess__form-block-title">4. ИНН вашего должника (если есть)</h5>
+                <div class="form-field ask__form-field"><input class="form-field__input js-number-input" type="text" name="" placeholder="Введите ИНН" /></div>
+              </div>
+              <div class="assess__form-block assess__form-block_width-3">
+                <h5 class="assess__form-block-title">5. Укажите ваши контактные данные:</h5>
+                <div class="form-field ask__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваше имя" /></div>
+                <div class="form-field ask__form-field"><input class="form-field__input js-tel-input" type="tel" name="" placeholder="Введите ваш телефон" />
+                  <div class="form-field__error">Обязательно для заполнения</div>
+                </div>
+                <div class="form-field ask__form-field"><input class="form-field__input" type="email" name="" placeholder="Введите вашу почту" /></div>
+              </div>
+              <div class="assess__form-actions assess__form-actions_width-3"><button class="btn btn_ls assess__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
+                  <div class="btn__decor"></div>
+                </button>
+                <div class="check-box"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
+                    <div class="check-box__visual"></div>
+                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+              </div>
+            </form>
+            <div class="assess__result" data-pricelist-url="../data/prices.json" data-active-case="1">
+              <div class="assess__result-inner">
+                <div class="assess__result-header">
+                  <div class="assess__result-descr">Стоимость наших услуг составит:</div>
+                </div>
+                <div class="assess__result-title title-sm title-sm_red"><span class="js-total-price"></span> руб</div>
+                <div class="assess__result-text">
+                  <div class="assess__result-text-title"><span class="js-first-price"></span> руб</div>
+                  <div class="assess__result-text-descr">в течение 5 дней с момента вступления в силу решения суда</div>
+                </div>
+                <div class="assess__result-text">
+                  <div class="assess__result-text-title"><span class="js-last-price"></span> руб</div>
+                  <div class="assess__result-text-descr">в течение 5 дней с момента поступления средств на ваш счет</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!--end assess-->
       <!--begin about-->
       <section class="about" id="about">

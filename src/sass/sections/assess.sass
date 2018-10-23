@@ -1,6 +1,8 @@
 .assess
    position: relative
    padding: 60px 0
+   +xs
+      padding: 60px 0 0
    &::after
       position: absolute
       left: 0
@@ -10,9 +12,16 @@
       height: 130px
       background-color: #D5B893
       content: ''
+      +xs
+         bottom: -30px
    &__title
       max-width: 650px
       margin: 0 auto 107px
+      +sm
+         margin: 0 auto 20px
+      .section-title__descr
+         +xs
+            letter-spacing: 0
    &__content
       position: relative
       max-width: 994px
@@ -21,6 +30,8 @@
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04)
       border: 1px solid #d5b893
       background-color: #fff
+      +xs
+         padding: 25px 20px 20px
       &::before
          position: absolute
          top: -50px
@@ -30,30 +41,49 @@
          z-index: -1
          background-color: #513A1D
          content: ''
+         +xs
+            display: none
       &-title
          max-width: 610px
          margin: 0 auto 30px
          +f('pn700', 24, 25, 0)
          color: #6D788C
          text-align: center
+         +xs
+            font-size: 20px
+            line-height: 22px
       
    &__form
       width: 562px
+      +xs
+         width: auto
       &-block
          $parent: &
          &_width-1
             max-width: 518px
+            +xs
+               max-width: none
          &_width-3
             max-width: 358px
+            +xs
+               max-width: none
          & + &
             margin-top: 44px
+            +xs
+               margin-top: 30px
          &-title
             margin-bottom: 30px
             +f('pn600', 20, 25, 0)
             color: #21262D
+            +xs
+               margin-bottom: 15px
+               font-size: 18px
+               line-height: 22px
          &-row
             display: flex
             margin: 0 -15px
+            +xs
+               flex-wrap: wrap
             #{$parent}_width-3 &
                margin: 0 -10px
          &-col
@@ -64,24 +94,45 @@
                &:nth-child(1)
                   flex: 0 1 45%
                   width: 45%
+                  +xs
+                     flex: 0 1 auto
+                     width: 100%
                &:nth-child(2)
                   flex: 0 1 55%
                   width: 55%
+                  +xs
+                     flex: 0 1 auto
+                     width: 100%
             #{$parent}_width-2 &
                padding: 0 10px
+               +xs
+                  padding: 0 15px
                &:nth-child(1)
                   flex: 0 0 50.5%
                   width: 50.5%
+                  +xs
+                     flex: 0 1 auto
+                     width: 100%
                &:nth-child(2)
                   flex: 0 1 50%
                   width: 50%
+                  +xs
+                     flex: 0 1 auto
+                     width: 100%
+            &:not(:last-child)
+               +xs
+                  margin-bottom: 10px
       &-check-box
          &:not(:last-child)
             margin-bottom: 10px
       &-actions
          margin-top: 30px
+         +sm
+            margin-top: 20px
          &_width-3
             max-width: 358px
+            +xs
+               max-width: none
       &-submit
          width: 100%
          margin-bottom: 26px
@@ -93,11 +144,22 @@
       right: -45px
       width: 358px
       border: 22px solid #f9f2ea
+      +md
+         right: 20px
+         border-width: 15px
+      +sm
+         position: static
+         margin: 0 0 20px
+      +xs
+         width: auto
+         margin: 0 -20px 20px
       &-inner
          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
          background-color: #ffffff
       &-header
          padding: 20px 25px
+         +xs
+            padding: 15px
       &-descr
          max-width: 170px
          +f('pn400', 16, 20)
@@ -106,11 +168,15 @@
          padding: 0 25px
          margin-bottom: 20px
          letter-spacing: .5px
+         +xs
+            padding: 0 20px
       &-item
       &-text
          display: flex
          align-items: flex-start
          padding: 25px
+         +xs
+            padding: 15px
          &:nth-child(odd)
             background-color: #F9F9F9
          &-title
@@ -122,3 +188,6 @@
          &-descr
             +f('pn600', 14, 18, 0)
             color: #808A9D
+            +xs
+               font-size: 12px
+               line-height: 14px
