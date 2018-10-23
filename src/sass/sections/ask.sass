@@ -1,6 +1,8 @@
 .ask
    position: relative
    padding: 95px 0 45px
+   +xs
+      padding: 0 0 15px
    &::after
       position: absolute
       left: 0
@@ -18,6 +20,8 @@
       border: 1px solid #d5b893
       background-color: #ffffff
       z-index: unset
+      +xs
+         padding: 30px 15px 35px
       &::after
          position: absolute
          top: -53px
@@ -27,8 +31,13 @@
          z-index: -1
          background-color: #513A1D
          content: ''
+         +xs
+            display: none
    &__title
       margin-bottom: 20px
+      .section-title__text
+         +xs
+            font-size: 25px
    &__descr
       margin-bottom: 58px
       +f('pn600', 20, 24)

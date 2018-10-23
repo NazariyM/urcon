@@ -3,13 +3,26 @@
       display: flex
       align-items: center
       max-width: 1240px
+      +xs
+         flex-direction: column
+         align-items: center
    &__top
       padding: 26px 0 22px
+      +xs
+         padding: 25px 0 15px
    &__bottom
       padding: 33px 0 47px
       background-color: #F9F9F9
+      +sm
+         padding: 25px 0
    &__logo
       margin-right: 166px
+      +md
+         margin-right: 65px
+      +sm
+         margin-right: 35px
+      +xs
+         display: none
    &__contact-block
       position: relative
       top: -5px
@@ -17,19 +30,37 @@
       width: 184px
       margin-left: auto
       margin-right: 50px
+      +sm
+         margin-right: 0
+      +xs
+         flex: 0 1 auto
+         margin: 0
    &__copyright
       flex: 0 0 208px
       width: 208px
       margin-left: 4px
       margin-right: 60px
       +f('man400', 10, 13, 0)
+      +sm
+         margin-right: auto
+      +xs
+         flex: 0 1 auto
+         margin: 0 0 15px
+         text-align: center
       a
          color: #D5B893
    &__dev
       margin-left: auto
-      margin-right: 40px
+      margin-right: 50px
       color: #21262D
       +f('man500', 11, 13, 0)
+      +sm
+         margin-right: 0
+      +xs
+         margin-right: auto
    &__scroll-top-btn
       position: relative
       top: 5px
+      +xs
+         top: auto
+         margin-bottom: 15px
