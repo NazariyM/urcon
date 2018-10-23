@@ -143,6 +143,8 @@
          border-radius: 9px
          border: 1px solid #d5b893
          background-color: #f9f9f9
+         .is-ie &
+             flex: 0 0 16px
          &::after
             top: calc(50% - 5px)
             left: calc(50% - 5px)
@@ -150,7 +152,7 @@
             height: 10px
             content: ''
    &__text
-      flex: 1
+      flex: 1 1 auto
       +f('man400', 10, 13, 0)
       #{$parent}_radio &
          +f('man600', 13, 23, 0)

@@ -1,5 +1,6 @@
 import { TweenMax } from 'gsap';
 import ScrollMagic from 'scrollmagic';
+import 'isomorphic-fetch';
 
 class Assess {
   constructor() {
@@ -18,8 +19,6 @@ class Assess {
   }
 
   init() {
-    // this.getPricesList()
-    //   .then(() => this.writePrice(this.checkCase()));
     this.getPricesList().then(() => this.initAnim());
 
     this.bindEvents();

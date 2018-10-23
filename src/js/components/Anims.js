@@ -9,7 +9,7 @@ class Anims {
     this.staggerY = [...document.querySelectorAll('[data-anim-stagger="fade-y"]')];
     this.staggerX = [...document.querySelectorAll('[data-anim-stagger="fade-x"]')];
 
-    if (!Resp.isMobile) this.init();
+    this.init();
   }
 
   async init() {
