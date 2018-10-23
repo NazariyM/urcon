@@ -34,8 +34,13 @@
       +f('pn600', 20, 24)
       letter-spacing: 0.1px
       text-align: center
+      +sm
+         font-size: 18px
+      +xs
+         margin-bottom: 30px
       &-link
          color: #E21C21
+         white-space: nowrap
    &__form
       max-width: 745px
       margin: 0 auto
@@ -48,9 +53,16 @@
          &:nth-child(1)
             flex: 0 1 percentage(368 / 745)
             width: percentage(368 / 745)
+            +xs
+               flex: 1 1 auto
+               width: 100%
+               margin-bottom: 20px
          &:nth-child(2)
             flex: 0 1 percentage(380 / 745)
             width: percentage(380 / 745)
+            +xs
+               flex: 1 1 auto
+               width: 100%
       &-agree
          margin-top: 20px
       &-submit

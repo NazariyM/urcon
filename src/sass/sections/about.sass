@@ -1,13 +1,18 @@
 .about
    padding: 37px 0 64px
+   +xs
+      padding: 50px 0
    &__title
       margin-bottom: 33px
    &__text
       max-width: 700px
       margin: 0 auto 100px
       text-align: center
+      +xs
+         margin: 0 auto 60px
       &-descr
-         +f('man300', 14, 19)
+         +xs
+            font-size: 13px
          &_size
             margin: 0 auto 30px
             max-width: 618px
@@ -20,11 +25,19 @@
          letter-spacing: 0.31px
          text-align: left
          color: #6D788C
+         +xs
+            margin: 35px auto
+            padding: 0 8px 0 50px
+            font-size: 16px
+            line-height: 16px
+   
          &-icon
             position: absolute
             top: 0
             left: 0
             font-size: 31px
+            +xs
+               font-size: 24px
    &__items-container
       max-width: 1200px
    &__row

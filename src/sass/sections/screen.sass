@@ -41,6 +41,9 @@
    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
    +sm
       padding: 50px 0
+   +xs
+      position: relative
+      padding: 80px 0
    &__row
       margin: 0 -10px
    &__item
@@ -53,7 +56,8 @@
          padding: 0 10px
       &:not(:last-child)
          +xs
-            margin-bottom: 50px
+            position: static
+            padding: 0 10px 50px
          &::after
             position: absolute
             top: -18px
@@ -62,9 +66,21 @@
             height: 205px
             background: url("../img/decor/vert-line.svg") no-repeat
             content: ''
+            +xs
+               right: calc(50% - 50px)
+               transform: rotate(90deg)
+               background-size: contain
+               width: 100px
+               height: 250px
+               pointer-events: none
       .diamond-shape__title
          position: relative
          top: 5px
+      &:nth-child(1)
+         &::after
+            +xs
+               top: -45px
+            
       &:nth-child(2)
          &::after
             right: -10px
@@ -72,8 +88,12 @@
                right: 0
             +sm
                right: -10px
+            +xs
+               top: auto
+               bottom: -130px
          .diamond-shape__title
             font-size: 48px
+      
       &-diamond
          margin-bottom: 23px
       &-title

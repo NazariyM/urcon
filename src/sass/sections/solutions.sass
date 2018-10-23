@@ -1,9 +1,13 @@
 .solutions
    padding: 58px 0 100px
+   +xs
+      padding: 58px 0 50px
    &__container
       max-width: 1042px
    &__title
       margin-bottom: 37px
+      +xs
+         margin-bottom: 25px
    &__item
       position: relative
       padding: 20px 0
@@ -23,6 +27,11 @@
          max-width: 766px
          margin: 0 auto
          padding-right: 30px
+         +sm
+            padding: 0 30px
+         +xs
+            flex-direction: column
+            padding: 0
       &-question
          position: relative
          padding-left: 50px
@@ -31,6 +40,12 @@
          font-size: 18px
          line-height: 22px
          letter-spacing: 0.17px
+         +xs
+            flex: 0 1 auto
+            margin-bottom: 15px
+            padding-left: 30px
+            font-size: 16px
+            line-height: 20px
          &::before
             position: absolute
             top: 5px
@@ -53,6 +68,7 @@
          line-height: 15px
          letter-spacing: 1.02px
          text-transform: uppercase
+         
          &-arr
             margin: -1px 0 0 4px
             #{$parent}:hover &

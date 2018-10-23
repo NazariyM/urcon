@@ -4,6 +4,10 @@ body
    -moz-osx-font-smoothing: grayscale
    +f('man300', 14, 19, 22)
    color: #363C43
+   +xs
+      font-size: 13px
+      line-height: 18px
+   
    &.is-locked
       position: fixed
       top: 0
@@ -35,7 +39,7 @@ body
          width: 100%
       &:not(:last-child)
          +xs
-            margin-bottom: 40px
+            padding: 0 15px 40px
 
 .main
    display: block
@@ -56,7 +60,8 @@ body
    text-transform: uppercase
    transition: .3s ease-in-out
    +xs
-      padding: 15px
+      padding: 15px 25px
+      font-size: 15px
    &:hover
       background-color: darken(#D5B893, 12)
       &::before
@@ -74,6 +79,8 @@ body
       content: ''
    &_ls
       letter-spacing: 1.8px
+      +xs
+         letter-spacing: 0
    span
       position: relative
       z-index: 1
