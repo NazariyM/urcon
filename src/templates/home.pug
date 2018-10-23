@@ -13,24 +13,34 @@ block content
 			+e.content.has-bg._1(style=`background-image: url(img/bg/screen_bg.jpg)`)
 				+e.container.container
 					+sectTitle('_lg _color-1 screen__title', 'Законное взыскание долгов с юридических лиц с оплатой по факту зачисления на ваш счет', 'Для тех, кому нужны гарантии, а не юрист в штате', true)
-					+btn('screen__btn', 'БЕСПЛАТНЫЙ АНАЛИЗ ВАШЕГО ДЕЛА')
+					+btn('screen__btn', 'БЕСПЛАТНЫЙ АНАЛИЗ ВАШЕГО ДЕЛА', 'call-popup')
 
 			+b.benefits.screen__benefits
 				+e.row.row
-					+e.item.col.col_sm
+					+e.item.col.col_sm(onclick='')
 						+b.diamond-shape.benefits__item-diamond
 							+e.title 2
 								+e.SPAN.title-descr МЕСЯЦА
 						+e.P.item-descr Средний срок возврата долга нашим клиентам
-					+e.item.col.col_sm
+						+e.item-content
+							+e.P.item-content-text Бесплатный экспертный анализ вашего дела
+							+e.A.item-content-link.link-decor(data-popup-target='call-popup' href='#!') Получить анализ
+
+					+e.item.col.col_sm(onclick='')
 						+b.diamond-shape.benefits__item-diamond
 							+e.title %
 						+e.P.item-descr Оплату (% от иска) мы получаем только после исполнения иска и зачисления средств на ваш счет
-					+e.item.col.col_sm
+						+e.item-content
+							+e.P.item-content-text Бесплатный экспертный анализ вашего дела
+							+e.A.item-content-link.link-decor(data-popup-target='call-popup' href='#!') Получить анализ
+					+e.item.col.col_sm(onclick='')
 						+e.item-shape
 						+b.diamond-shape.benefits__item-diamond
 							+e.icon._rubl: +i('rubl')
 						+e.P.item-descr Стоимость наших услуг всегда включена в сумму иска
+						+e.item-content
+							+e.P.item-content-text Бесплатный экспертный анализ вашего дела
+							+e.A.item-content-link.link-decor(data-popup-target='call-popup' href='#!') Получить анализ
 		//end screen
 			
 		//begin solutions
@@ -45,11 +55,11 @@ block content
 					'Вы подали в суд самостоятельно, но не знаете что делать дальше?',
 					'Вы выиграли суд, но денег на счет так и не получили?',
 					'Контрагент объявил себя банкротом?']
-				for text in solutionsList
+				for text, i in solutionsList
 					+e.item
 						+e.item-inner
 							+e.P.item-question= text
-							+e.A.item-link(href='#!') Есть решение
+							+e.A.item-link(data-popup-target=`solutions-popup-${i + 1}` data-anim='fade-x' href='#!') Есть решение
 								= ' '
 								+e.SPAN.item-link-arr →
 		//end solutions
@@ -188,6 +198,7 @@ block content
 
 		//begin about
 		+b.SECTION.about#about
+			+e.IMG.decor-img(src='img/decor/triple-squares.svg' alt='image')
 			+e.container.container
 				+sectTitle('_color-1 about__title', 'О компании')
 				+e.text
@@ -203,7 +214,7 @@ block content
 						['B2B', 'Строго для бизнеса'],
 						['10', 'Опытных юристов, специализирующихся на вопросах взыскания задолженности']]
 					for text in aboutItem
-						+e.item.col.col_sm
+						+e.item.col.col_sm(data-anim-stagger="fade-y")
 							+b.diamond-shape.about__item-diamond
 								+e.title= text[0]
 							+e.P.item-descr= text[1]

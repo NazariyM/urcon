@@ -95,6 +95,7 @@
     "inputmask": "^4.0.2",
     "object-fit-images": "^3.2.4",
     "object-fit-videos": "^1.0.4",
+    "scrollmagic": "^2.0.6",
     "slick-carousel": "^1.8.1",
     "svgxuse": "^1.2.6",
     "vintage-popup": "^0.1.10"

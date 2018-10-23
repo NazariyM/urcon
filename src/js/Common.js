@@ -2,6 +2,8 @@ import { $body, detectIE, $scrolledElements } from './_helpers';
 
 import './components/Header';
 import './components/Popups';
+import './components/Anims';
+import './components/ScrollAnim';
 import './components/Form';
 import './sections/Assess';
 

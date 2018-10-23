@@ -27,8 +27,12 @@ html(lang='ru')
       block footer
         include ../partials/_footer
 
+      //begin popups
       block modals
-        //+popup({ name: 'call-popup' })
+        +popup({ name: 'call-popup' })
+        +popup({ name: 'thanks-popup' })
+        +popup({ name: 'solutions-popups' })
+      //end popups
 
       //LOAD SCRIPTS
       block scripts

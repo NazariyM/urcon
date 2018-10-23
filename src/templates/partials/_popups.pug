@@ -2,10 +2,80 @@ mixin popup(el)
 	case el.name
 
 		when 'thanks-popup'
-			+b.popup(data-popup-id='thanks-popup', tabindex='-1', role='dialog')
-				+e.container._xs
+			+b.popup._sm(data-popup-id='thanks-popup', tabindex='-1', role='dialog')
+				+e.container
 					+e.close.js-popup-close: +i('close')
-					+b.contact-form.thanks-popup
-						+e.H5.title.title Спасибо!
-						+e.P Наш менеджер свяжется с Вами в ближайшее время
-						+b.BUTTON.thanks-popup__btn(data-popup-target='thanks-popup' type='button')
+					+b.thanks-popup
+						+e.A.logo.logo(href='#!')
+							+e.IMG(src='img/other/logo.svg' alt='ЮРКОН')
+						+e.H5.title.popup__title Спасибо, ваша заявка принята!
+						+e.P Наши специалисты свяжутся с вами в ближайшее время
+						+e.BUTTON.btn(data-popup-target='thanks-popup' type='button')
+
+		when 'call-popup'
+			+b.popup._sm(data-popup-id='call-popup', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')
+					+b.call-block
+						+e.text
+							+e.H4.title.popup__title Оставьте заявку
+							+e.P и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно
+						+e.FORM.form.js-form(action='#!' method='POST')
+							+formField('call-block__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel' name='tel')
+							+btn('_ls call-block__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
+							.check-box.call-block__form-check
+								label.check-box__label
+									input.check-box__input(type='checkbox', name='', checked='checked' required)
+									.check-box__visual
+								span.check-box__text
+									| Вы соглашаетесь с условиями обработки
+									br
+									| персональных данных
+									br
+									| и
+									= ' '
+									a.check-box__link.link-decor(href='#!') политикой конфиденциальности
+
+		when 'solutions-popups'
+			-
+				solutionPopupsList = [
+				'Выполнили поставку товара, но не можете получить оплату?',
+				'Контрагент отказывается платить за выполненные услуги?',
+				'Контрагент затягивает оплату под прелогом «сейчас нет денег»?',
+				'Вы подали в суд самостоятельно, но не знаете что делать дальше?',
+				'Вы выиграли суд, но денег на счет так и не получили?',
+				'Контрагент объявил себя банкротом?']
+
+			for popup, idx in solutionPopupsList
+
+				+b.popup._md(data-popup-id=`solutions-popup-${idx + 1}`, tabindex='-1', role='dialog')
+					+e.container
+						+e.close.js-popup-close: +i('close')
+						+b.solutions-popup
+							+e.H4.title.popup__title= popup
+
+							+e.row.row
+								+e.col.col
+									p Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.
+
+									p В 75% таких случаев контрагент оплачивает долг сразу после получения грамотно составленной досудебной претензии от наших юристов так как понимает, что дело приобретает серьезные обороты. Все понимают, что площе заплатить долг, чем затем оплачивать неустойки, судебные и другие расходы.
+								+e.col.col
+									+b.call-block._solutions-popup
+										+e.text
+											+e.H4.title.popup__title Оставьте заявку
+											+e.P и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно
+										+e.FORM.form.js-form(action='#!' method='POST')
+											+formField('call-block__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel' name='tel')
+											+btn('_ls call-block__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
+											.check-box.call-block__form-check
+												label.check-box__label
+													input.check-box__input(type='checkbox', name='', checked='checked' required)
+													.check-box__visual
+												span.check-box__text
+													| Вы соглашаетесь с условиями обработки
+													br
+													| персональных данных
+													br
+													| и
+													= ' '
+													a.check-box__link.link-decor(href='#!') политикой конфиденциальности

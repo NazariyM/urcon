@@ -1,4 +1,5 @@
 import { TweenMax } from 'gsap';
+import ScrollMagic from 'scrollmagic';
 
 class Assess {
   constructor() {
@@ -17,8 +18,9 @@ class Assess {
   }
 
   init() {
-    this.getPricesList()
-      .then(() => this.writePrice(this.checkCase()));
+    // this.getPricesList()
+    //   .then(() => this.writePrice(this.checkCase()));
+    this.getPricesList().then(() => this.initAnim());
 
     this.bindEvents();
     if (window.matchMedia('(max-width: 1023px)').matches) this.appendResultBlock();
@@ -139,6 +141,40 @@ class Assess {
     const formActs = this.block.querySelector('.assess__form-actions');
 
     formActs.prepend(this.resultBlock);
+  }
+
+  async createScene() {
+    const _this = this;
+
+    const scene = new ScrollMagic.Scene({
+      triggerElement: _this.triggerElement,
+      triggerHook: _this.triggerHook,
+      reverse: _this.reverse
+    })
+      .on('enter', () => {
+        if (typeof _this.onEnter !== 'function') return;
+        _this.onEnter();
+      })
+      .addTo(scrollController);
+  }
+
+  initAnim() {
+    const _this = this;
+
+    const ctrl = new ScrollMagic.Controller();
+    const scene = new ScrollMagic.Scene({
+      triggerElement: _this.block,
+      reverse: false
+    })
+      .on('enter', () => {
+        anim();
+      })
+      .addTo(ctrl);
+
+    function anim() {
+      TweenMax.to(_this.resultBlock, 1, { autoAlpha: 1, y: 0 });
+      _this.writePrice(_this.checkCase());
+    }
   }
 }
 

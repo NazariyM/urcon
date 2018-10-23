@@ -1,15 +1,17 @@
+import 'gsap/ScrollToPlugin';
 import {
   throttle,
-  detectIE,
   css,
-  Resp, $header, $scrolledElements
+  Resp
 } from '../_helpers';
 
 class Header {
   constructor() {
     this.body = document.querySelector('body');
     this.header = document.querySelector('.header');
-    this.nav = this.header.querySelector('.nav');
+    this.logos = document.querySelectorAll('.logo');
+    this.nav = this.header.querySelector('.nav_header');
+    this.navs = document.querySelectorAll('.nav');
     this.navBtn = this.header.querySelector('.nav-btn');
 
     this.init();
@@ -64,17 +66,41 @@ class Header {
 
   initScroll() {
     const _this = this;
-    const offsetTop = Resp.isDesk ? 50 : 65;
-    const $link = $header.find('.nav').find('a');
+    const offsetTop = Resp.isDesk ? 70 : 60;
 
-    $link.on('click', function(e) {
-      e.preventDefault();
-      const el = $(this).attr('href');
-      $scrolledElements.animate({scrollTop: $(el).offset().top - offsetTop}, 1500);
-      _this.nav.classList.remove(css.active);
-      _this.navBtn.classList.remove(css.active);
-      return false;
-    });
+    for (const logo of this.logos) {
+      logo.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        TweenMax.to(window, 1.5, {
+          scrollTo: { y: 0, autoKill: false }
+        });
+      });
+    }
+
+    for (const nav of this.navs) {
+      const navLinks = nav.querySelector('.nav__list');
+
+      [...navLinks.querySelectorAll('a')].forEach(item => {
+        item.addEventListener('click', (e) => {
+          if (item.href.indexOf('#') !== -1) {
+            e.preventDefault();
+            const href = item.href;
+            const hashName = href.slice(href.indexOf('#') + 1, href.length);
+
+            nav.classList.remove(css.active);
+            _this.navBtn.classList.remove(css.active);
+
+            TweenMax.to(window, 1.5, {
+              scrollTo: {
+                y: document.getElementById(hashName).getBoundingClientRect().top + window.pageYOffset - offsetTop,
+                autoKill: false
+              }
+            });
+          }
+        });
+      });
+    }
   }
 }
 

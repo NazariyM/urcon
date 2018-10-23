@@ -34,3 +34,21 @@
       opacity: .35
       -webkit-transform: translate(120%)
       transform: translate(120%)
+
+// default anims
+[data-anim='fade-y']
+   opacity: 0
+   transform: translateY(60px)
+   +xs
+      opacity: 1
+      transform: none
+
+[data-anim-stagger="fade-x"]
+   > *
+      opacity: 0
+      transform: translateX(-60px)
+
+[data-anim-stagger="fade-y"]
+   > *
+      opacity: 0
+      transform: translateY(60px)

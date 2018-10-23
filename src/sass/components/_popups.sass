@@ -19,7 +19,7 @@
    &::before
       +coverdiv
       opacity: .9
-      background: #17171a url(../img/decor/noise_black.png)
+      background: #17171a
       content: ''
    &:after
       content: ''
@@ -27,15 +27,19 @@
       vertical-align: middle
       width: 0
       height: 100%
-   
+   &_md
+      &::after, &::before
+         +xs
+            display: none
+      
    &.opened
       opacity: 1
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
       visibility: visible
    &__close
       position: absolute
-      top: -5px
-      right: -28px
+      top: 7px
+      right: 7px
       z-index: 10
       cursor: pointer
       padding: 0
@@ -46,14 +50,16 @@
       height: 20px
       border: 0
       +xs
-         top: -30px
-         right: 15px
+         top: 10px
+         right: 10px
       &:hover svg
-         fill: $color1
+         fill: #d5b893
       svg
-         fill: #808080
-         font-size: 14px
+         fill: $color1
+         font-size: 16px
          +trs
+         +xs
+            font-size: 20px
    
    &__container
       display: inline-block
@@ -66,14 +72,24 @@
       transition: opacity .5s ease, transform .5s ease
       transform: translate3d(0, -100px, 0)
       will-change: transform, opacity
-      text-align: left
-      border-radius: 5px
-      +mob-fix
-      &_xs
-         max-width: 420px
-      &_lg
+      text-align: center
+      background-color: $white
+      #{$parent}_sm &
+         max-width: 330px
+         +xs
+            max-width: 300px
+      #{$parent}_md &
          max-width: 706px
-         
+         +xs
+            margin: 0
+   &__title
+      +f('pn700', 24, 20)
+      text-transform: uppercase
+   p
+      color: $color2
+      font-size: 13px
+      line-height: 18px
+
 body.popup-opened
    overflow: hidden
 
@@ -81,18 +97,88 @@ body.popup-opened
    -webkit-transform: translate3d(0, 0, 0)
    -moz-transform: translate3d(0, 0, 0)
    transform: translate3d(0, 0, 0)
-  
+
 // *** begin thanks-popup *** //
 .thanks-popup
+   padding: 20px 5px 25px
    text-align: center
+   &__logo
+      pointer-events: none
+      margin: 0 auto 10px
+   &__title
+      margin-bottom: 10px
+      font-size: 16px
    &__btn
       display: none
    p
-      color: $color2
-      font-size: 18px
-      line-height: 24px
+      max-width: 200px
+      margin: 0 auto
       text-align: center
-      +xs
-         font-size: 16px
-      
 // end thanks-popup //
+
+// *** begin call-block *** //
+.call-block
+   $parent: &
+   padding: 35px 15px 30px
+   +xs
+      padding: 35px 8px 30px
+   &_solutions-popup
+      padding: 0
+      +xs
+         padding: 0
+   &__text
+      margin-bottom: 20px
+   &__title
+      margin-bottom: 10px
+      #{$parent}_solutions-popup &
+         text-align: left
+         +xs
+            text-align: center
+   &__form
+      text-align: left
+      &-field
+         &:not(:last-child)
+            margin-bottom: 15px
+      
+      &-submit
+         width: 100%
+         margin-bottom: 30px
+         padding: 15px 25px
+         letter-spacing: 0
+   p
+      text-align: center
+   &_solutions-popup p
+      text-align: left
+      +xs
+         text-align: center
+// end call-block //
+
+// *** begin solutions-popup *** //
+.solutions-popup
+   padding: 35px 20px
+   text-align: left
+   +xs
+      padding: 35px 0
+   &__col
+      &:nth-child(1)
+         flex: 0 1 55%
+         width: 55%
+         +xs
+            flex: 0 1 auto
+            width: 100%
+            margin-bottom: 20px
+      &:nth-child(2)
+         flex: 0 1 45%
+         width: 45%
+         +xs
+            flex: 0 1 auto
+            width: 100%
+   
+   &__title
+      margin-bottom: 15px
+      text-align: left
+      line-height: 26px
+   p
+      &:not(:last-child)
+         margin-bottom: 20px
+// end solutions-popup //

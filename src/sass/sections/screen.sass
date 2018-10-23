@@ -35,38 +35,34 @@
       margin: -73px auto 0
 
 .benefits
-   padding: 50px 30px 60px
    background: $white
    border: 1px solid #DCB385
    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04)
-   +sm
-      padding: 50px 0
    +xs
       position: relative
-      padding: 80px 0
    &__row
-      margin: 0 -10px
+      //margin: 0 -10px
    &__item
       $parent: &
       position: relative
+      padding: 50px 15px 60px
       text-align: center
       line-height: 17px
       color: #363C43
-      +sm
-         padding: 0 10px
       &:not(:last-child)
          +xs
-            position: static
-            padding: 0 10px 50px
+            padding: 50px 15px
          &::after
             position: absolute
-            top: -18px
+            top: calc(50% - 102px)
             right: 0
             width: 12px
             height: 205px
             background: url("../img/decor/vert-line.svg") no-repeat
             content: ''
             +xs
+               top: auto
+               bottom: -160px
                right: calc(50% - 50px)
                transform: rotate(90deg)
                background-size: contain
@@ -76,11 +72,6 @@
       .diamond-shape__title
          position: relative
          top: 5px
-      &:nth-child(1)
-         &::after
-            +xs
-               top: -45px
-            
       &:nth-child(2)
          &::after
             right: -10px
@@ -88,19 +79,62 @@
                right: 0
             +sm
                right: -10px
-            +xs
-               top: auto
-               bottom: -130px
          .diamond-shape__title
             font-size: 48px
       
       &-diamond
          margin-bottom: 23px
-      &-title
       &-descr
          max-width: 280px
          margin: 0 auto
          +f('pn400', 14, 17)
          #{$parent}:nth-child(1) &
             max-width: 240px
-      &-icon
+      &-content
+         pointer-events: none
+         opacity: 0
+         transform: scale(.7)
+         position: absolute
+         top: -1px
+         left: -15px
+         right: -15px
+         bottom: -1px
+         z-index: 5
+         display: flex
+         flex-direction: column
+         justify-content: center
+         align-items: center
+         background: #fafafa
+         border: 1px solid #dcb385
+         transition: .3s ease-in-out
+         content: ''
+         +sm
+            cursor: pointer
+         +xs
+            left: 14px
+            right: 14px
+         #{$parent}:nth-child(1) &
+            left: 14px
+         #{$parent}:nth-child(3) &
+            right: 12px
+            +xs
+               right: 14px
+               
+         #{$parent}:hover &
+            pointer-events: auto
+            opacity: 1
+            transform: scale(1)
+         &-text
+            max-width: 270px
+            margin-bottom: 40px
+            +f('man500', 16, 22)
+            +sm
+               max-width: 220px
+               font-size: 14px
+               line-height: 20px
+   
+         &-link
+            +f('man500')
+            color: #d5b893
+            +sm
+               font-size: 13px

@@ -92,6 +92,10 @@
          +f('pn600', 13, 16, 0)
          text-transform: uppercase
          color: #6D788C
+         #{$parent}_footer &
+            transition: .3s ease-in-out
+            &:hover
+               color: #d5b893
          &::before
             position: absolute
             left: 0
