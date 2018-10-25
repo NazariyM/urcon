@@ -1,4 +1,6 @@
 import { TweenMax } from 'gsap';
+import '../lib/ModifiersPlugin.min';
+
 import ScrollMagic from 'scrollmagic';
 import 'isomorphic-fetch';
 
@@ -111,17 +113,53 @@ class Assess {
     let last = parseInt(this.pricesList[`case_${currentIdx}`].last.replace(/\s/g,''));
 
     let counter = { var1: 0, var2: 0, var3: 0 };
-    TweenMax.to(counter, 1, {
-      var1: total,
-      var2: first,
-      var3: last,
-      onUpdate: () => {
-        this.totalPrice.textContent = Math.ceil(counter.var1);
-        this.firstPrice.textContent = Math.ceil(counter.var2);
-        this.lastPrice.textContent = Math.ceil(counter.var3);
-      },
-      ease: Circ.easeOut
-    });
+
+    TweenMax
+      .to(counter, 1, {
+        var1: total,
+        var2: first,
+        var3: last,
+        ease: Circ.easeOut,
+        modifiers: {
+          var1: (var1) => {
+            let val1;
+
+            if (valLength(var1) === 5) {
+              val1 = Math.ceil(var1).toString().replace(/(.{2})/,'$1 ');
+            } else {
+              val1 = Math.ceil(var1).toString().replace(/(.{3})/,'$1 ');
+            }
+
+            this.totalPrice.textContent = val1;
+          },
+          var2: (var2) => {
+            let val2;
+
+            if (valLength(var2) === 5) {
+              val2 = Math.ceil(var2).toString().replace(/(.{2})/,'$1 ');
+            } else {
+              val2 = Math.ceil(var2).toString().replace(/(.{3})/,'$1 ');
+            }
+
+            this.firstPrice.textContent = val2;
+          },
+          var3: (var3) => {
+            let val3;
+
+            if (valLength(var3) === 5) {
+              val3 = Math.ceil(var3).toString().replace(/(.{2})/,'$1 ');
+            } else {
+              val3 = Math.ceil(var3).toString().replace(/(.{3})/,'$1 ');
+            }
+
+            this.lastPrice.textContent = val3;
+          }
+        }
+      });
+
+    const valLength = (numb) => {
+      return Math.ceil(numb).toString().length;
+    };
   }
 
   checkPrevValue() {
@@ -140,21 +178,6 @@ class Assess {
     const formActs = this.block.querySelector('.assess__form-actions');
 
     formActs.prepend(this.resultBlock);
-  }
-
-  async createScene() {
-    const _this = this;
-
-    const scene = new ScrollMagic.Scene({
-      triggerElement: _this.triggerElement,
-      triggerHook: _this.triggerHook,
-      reverse: _this.reverse
-    })
-      .on('enter', () => {
-        if (typeof _this.onEnter !== 'function') return;
-        _this.onEnter();
-      })
-      .addTo(scrollController);
   }
 
   initAnim() {
