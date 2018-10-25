@@ -161,16 +161,16 @@ block content
 							+formField('assess__form-field', 'Введите вашу почту')(type='email')
 						+e.form-actions._width-3
 							+btn('_ls assess__form-submit', 'ОТПРАВИТЬ ЗАЯВКУ')(type='submit')
-							.check-box
+							.check-box.js-agreement-check
 								label.check-box__label
-									input.check-box__input(type='checkbox', name='', checked='checked' required)
+									input.check-box__input(type='checkbox', name='', checked='checked')
 									.check-box__visual
 								span.check-box__text
 									| Вы соглашаетесь с условиями обработки
 									br
 									| персональных данных и
 									= ' '
-									a.check-box__link.link-decor(href='#!') политикой конфиденциальности
+									a.check-box__link.link-decor(data-popup-target='agree-popup' href='#!') политикой конфиденциальности
 
 					+e.result(data-pricelist-url='../data/prices.json' data-active-case='1')
 						+e.result-inner
@@ -271,20 +271,20 @@ block content
 								+e.form-title.title-sm._red от 15000 руб/месяц
 								+e.P.form-descr Оставьте заявку и рассчитайте стоимость вашего обслуживания
 
-							+formField('service__form-field', 'Введите ваше имя')
-							+formField('service__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel')
+							+formField('service__form-field', 'Введите ваше имя')(name='name')
+							+formField('service__form-field', 'Введите ваш телефон', 'Обязательно для заполнения')(class='js-tel-input' type='tel' name='tel')
 							+e.form-actions
 								+btn('_ls service__form-submit', 'УЗНАТЬ СТОИМОСТЬ')(type='submit')
-								.check-box
+								.check-box.js-agreement-check
 									label.check-box__label
-										input.check-box__input(type='checkbox', name='', checked='checked' required)
+										input.check-box__input(type='checkbox', name='', checked='checked')
 										.check-box__visual
 									span.check-box__text
 										| Вы соглашаетесь с условиями обработки
 										br
 										| персональных данных и
 										= ' '
-										a.check-box__link.link-decor(href='#!') политикой конфиденциальности
+										a.check-box__link.link-decor(data-popup-target='agree-popup' href='#!') политикой конфиденциальности
 		//end service
 
 		//begin ask
@@ -308,16 +308,16 @@ block content
 
 					+e.form-actions.ask__form-row.row
 						+e.form-col
-							.check-box.ask__form-agree
+							.check-box.check-box.ask__form-agree.js-agreement-check
 								label.check-box__label
-									input.check-box__input(type='checkbox', name='', checked='checked' required)
+									input.check-box__input(type='checkbox', name='', checked='checked')
 									.check-box__visual
 								span.check-box__text
 									| Вы соглашаетесь с условиями обработки
 									br
 									| персональных данных и
 									= ' '
-									a.check-box__link.link-decor(href='#!') политикой конфиденциальности
+									a.check-box__link.link-decor(data-popup-target='agree-popup' href='#!') политикой конфиденциальности
 						+e.form-col
 							+btn('_ls ask__form-submit', 'получить консультацию')(type='submit')
 		//end ask

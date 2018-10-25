@@ -27,7 +27,7 @@
       vertical-align: middle
       width: 0
       height: 100%
-   &_md
+   &_md, &_lg
       +xs
          background: $white
       &::after, &::before
@@ -84,9 +84,11 @@
          max-width: 706px
          +xs
             margin: 0
-   &__title
-      +f('pn700', 24, 20)
-      text-transform: uppercase
+      #{$parent}_lg &
+         max-width: 1000px
+         +sm
+            max-width: 706px
+            margin: 0
    p
       color: $color2
       font-size: 13px

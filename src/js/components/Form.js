@@ -8,6 +8,8 @@ class Form {
     this.$telInput = this.$form.find('.js-tel-input');
     this.$numberInputs = this.$form.find('.js-number-input');
     this.$checkBoxField = this.$form.find('.check-box_has-field');
+    this.$agree = this.$form.find('.js-agreement-check');
+    this.$agreeCheckbox = this.$agree.find('input');
 
     this.init();
   }
@@ -75,15 +77,33 @@ class Form {
   checkError() {
     const $field = this.$telInput.parent();
 
-    if (this.$telInput.val() === '') {
-      $field
-        .addClass(css.error);
+    if (this.$telInput.val() === '' && !this.$agreeCheckbox.is(':checked')) {
+      $field.addClass(css.error);
+      this.$agree.addClass(css.error);
       setTimeout(() => {
-        $field
-          .removeClass(css.error);
+        $field.removeClass(css.error);
+        this.$agree.removeClass(css.error);
       }, 2000);
       return false;
-    } else {
+    }
+
+    if (this.$telInput.val() === '') {
+      $field.addClass(css.error);
+      setTimeout(() => {
+        $field.removeClass(css.error);
+      }, 2000);
+      return false;
+    }
+
+    if (!this.$agreeCheckbox.is(':checked')) {
+      this.$agree.addClass(css.error);
+      setTimeout(() => {
+        this.$agree.removeClass(css.error);
+      }, 2000);
+      return false;
+    }
+
+    else {
       return true;
     }
   }

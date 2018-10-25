@@ -19,7 +19,7 @@
               <li class="nav__list-item"><a class="nav__list-link" href="#screen">Главная</a></li>
               <li class="nav__list-item"><a class="nav__list-link" href="#solutions">решения</a></li>
               <li class="nav__list-item"><a class="nav__list-link" href="#advantages">преимущества</a></li>
-              <li class="nav__list-item"><a class="nav__list-link" href="#assess">получить оценку</a></li>
+              <li class="nav__list-item"><a class="nav__list-link" href="#assess">ОЦЕНКА ДЕЛА</a></li>
               <li class="nav__list-item"><a class="nav__list-link" href="#about">о компании</a></li>
               <li class="nav__list-item"><a class="nav__list-link" href="#footer">Контакты</a></li>
             </ul>
@@ -38,7 +38,7 @@
             <div class="section-title section-title_lg section-title_color-1 screen__title">
               <h1 class="section-title__text">Законное взыскание долгов с юридических лиц с оплатой по факту зачисления на ваш счет</h1>
               <p class="section-title__descr">Для тех, кому нужны гарантии, а не юрист в штате</p>
-            </div><button class="btn screen__btn" data-popup-target="call-popup"><span>БЕСПЛАТНЫЙ АНАЛИЗ ВАШЕГО ДЕЛА</span>
+            </div><button class="btn screen__btn" data-popup-target="call-popup" type="button"><span>БЕСПЛАТНЫЙ АНАЛИЗ ВАШЕГО ДЕЛА</span>
               <div class="btn__decor"></div>
             </button>
           </div>
@@ -237,9 +237,9 @@
               <div class="assess__form-actions assess__form-actions_width-3"><button class="btn btn_ls assess__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                   <div class="btn__decor"></div>
                 </button>
-                <div class="check-box"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
+                <div class="check-box js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked">
                     <div class="check-box__visual"></div>
-                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
               </div>
             </form>
             <div class="assess__result" data-pricelist-url="../data/prices.json" data-active-case="1">
@@ -365,16 +365,16 @@
                   <div class="service__form-title title-sm title-sm_red">от 15000 руб/месяц</div>
                   <p class="service__form-descr">Оставьте заявку и рассчитайте стоимость вашего обслуживания</p>
                 </div>
-                <div class="form-field service__form-field"><input class="form-field__input" type="text" name="" placeholder="Введите ваше имя" /></div>
-                <div class="form-field service__form-field"><input class="form-field__input js-tel-input" type="tel" name="" placeholder="Введите ваш телефон" />
+                <div class="form-field service__form-field"><input class="form-field__input" type="text" name="name" placeholder="Введите ваше имя" /></div>
+                <div class="form-field service__form-field"><input class="form-field__input js-tel-input" type="tel" name="tel" placeholder="Введите ваш телефон" />
                   <div class="form-field__error">Обязательно для заполнения</div>
                 </div>
                 <div class="service__form-actions"><button class="btn btn_ls service__form-submit" type="submit"><span>УЗНАТЬ СТОИМОСТЬ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
+                  <div class="check-box js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked">
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </div>
               </form>
             </div>
@@ -404,9 +404,9 @@
             </div>
             <div class="ask__form-actions ask__form-row row">
               <div class="ask__form-col">
-                <div class="check-box ask__form-agree"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required>
+                <div class="check-box check-box ask__form-agree js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked">
                     <div class="check-box__visual"></div>
-                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                  </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br>персональных данных и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
               </div>
               <div class="ask__form-col"><button class="btn btn_ls ask__form-submit" type="submit"><span>получить консультацию</span>
                   <div class="btn__decor"></div>
@@ -476,7 +476,7 @@
           </svg></div>
         <div class="call-block">
           <div class="call-block__text">
-            <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+            <h4 class="call-block__title title">Оставьте заявку</h4>
             <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
           </div>
           <form class="call-block__form js-form" action="#!" method="POST">
@@ -485,9 +485,9 @@
             </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
               <div class="btn__decor"></div>
             </button>
-            <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+            <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                 <div class="check-box__visual"></div>
-              </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+              </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
           </form>
         </div>
       </div>
@@ -498,8 +498,19 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="thanks-popup"><a class="thanks-popup__logo logo" href="#!"><img src="img/other/logo.svg" alt="ЮРКОН" title="" /></a>
-          <h5 class="thanks-popup__title popup__title">Спасибо, ваша заявка принята!</h5>
+          <h5 class="thanks-popup__title title">Спасибо, ваша заявка принята!</h5>
           <p>Наши специалисты свяжутся с вами в ближайшее время</p><button class="thanks-popup__btn" data-popup-target="thanks-popup" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_lg" data-popup-id="agree-popup" tabindex="-1" role="dialog">
+      <div class="popup__container">
+        <div class="popup__close js-popup-close"><svg class="icon-close ">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg></div>
+        <div class="agreement">
+          <h3 class="agreement__title title">Политика конфиденциальности</h3>
+          <p>В наших сервисах можно как размещать личные данные и материалы, так и различными способами управлять ими в целях обеспечения конфиденциальности. Создав аккаунт Google, Вы сможете переписываться с друзьями или коллегами в Gmail или публиковать фотографии в Google Фото, а результаты поиска Google станут точнее соответствовать запросам. В то же время многими сервисами можно пользоваться, не входя в аккаунт и даже не создавая его, например выполнять поиск в Интернете и смотреть видео на YouTube. Кроме того, в Chrome Вы можете посещать веб-страницы анонимно – в режиме инкогнито. Во всех наших сервисах Вы сами указываете, какую информацию о Вас мы можем собирать и как ее использовать.</p>
         </div>
       </div>
     </div>
@@ -509,7 +520,7 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="solutions-popup">
-          <h4 class="solutions-popup__title popup__title">Выполнили поставку товара, но не можете получить оплату?</h4>
+          <h4 class="solutions-popup__title title">Выполнили поставку товара, но не можете получить оплату?</h4>
           <div class="solutions-popup__row row">
             <div class="solutions-popup__col col">
               <p>Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.</p>
@@ -518,7 +529,7 @@
             <div class="solutions-popup__col col">
               <div class="call-block call-block_solutions-popup">
                 <div class="call-block__text">
-                  <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+                  <h4 class="call-block__title title">Оставьте заявку</h4>
                   <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
                 </div>
                 <form class="call-block__form js-form" action="#!" method="POST">
@@ -527,9 +538,9 @@
                   </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+                  <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </form>
               </div>
             </div>
@@ -543,7 +554,7 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="solutions-popup">
-          <h4 class="solutions-popup__title popup__title">Контрагент отказывается платить за выполненные услуги?</h4>
+          <h4 class="solutions-popup__title title">Контрагент отказывается платить за выполненные услуги?</h4>
           <div class="solutions-popup__row row">
             <div class="solutions-popup__col col">
               <p>Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.</p>
@@ -552,7 +563,7 @@
             <div class="solutions-popup__col col">
               <div class="call-block call-block_solutions-popup">
                 <div class="call-block__text">
-                  <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+                  <h4 class="call-block__title title">Оставьте заявку</h4>
                   <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
                 </div>
                 <form class="call-block__form js-form" action="#!" method="POST">
@@ -561,9 +572,9 @@
                   </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+                  <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </form>
               </div>
             </div>
@@ -577,7 +588,7 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="solutions-popup">
-          <h4 class="solutions-popup__title popup__title">Контрагент затягивает оплату под прелогом «сейчас нет денег»?</h4>
+          <h4 class="solutions-popup__title title">Контрагент затягивает оплату под прелогом «сейчас нет денег»?</h4>
           <div class="solutions-popup__row row">
             <div class="solutions-popup__col col">
               <p>Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.</p>
@@ -586,7 +597,7 @@
             <div class="solutions-popup__col col">
               <div class="call-block call-block_solutions-popup">
                 <div class="call-block__text">
-                  <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+                  <h4 class="call-block__title title">Оставьте заявку</h4>
                   <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
                 </div>
                 <form class="call-block__form js-form" action="#!" method="POST">
@@ -595,9 +606,9 @@
                   </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+                  <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </form>
               </div>
             </div>
@@ -611,7 +622,7 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="solutions-popup">
-          <h4 class="solutions-popup__title popup__title">Вы подали в суд самостоятельно, но не знаете что делать дальше?</h4>
+          <h4 class="solutions-popup__title title">Вы подали в суд самостоятельно, но не знаете что делать дальше?</h4>
           <div class="solutions-popup__row row">
             <div class="solutions-popup__col col">
               <p>Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.</p>
@@ -620,7 +631,7 @@
             <div class="solutions-popup__col col">
               <div class="call-block call-block_solutions-popup">
                 <div class="call-block__text">
-                  <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+                  <h4 class="call-block__title title">Оставьте заявку</h4>
                   <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
                 </div>
                 <form class="call-block__form js-form" action="#!" method="POST">
@@ -629,9 +640,9 @@
                   </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+                  <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </form>
               </div>
             </div>
@@ -645,7 +656,7 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="solutions-popup">
-          <h4 class="solutions-popup__title popup__title">Вы выиграли суд, но денег на счет так и не получили?</h4>
+          <h4 class="solutions-popup__title title">Вы выиграли суд, но денег на счет так и не получили?</h4>
           <div class="solutions-popup__row row">
             <div class="solutions-popup__col col">
               <p>Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.</p>
@@ -654,7 +665,7 @@
             <div class="solutions-popup__col col">
               <div class="call-block call-block_solutions-popup">
                 <div class="call-block__text">
-                  <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+                  <h4 class="call-block__title title">Оставьте заявку</h4>
                   <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
                 </div>
                 <form class="call-block__form js-form" action="#!" method="POST">
@@ -663,9 +674,9 @@
                   </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+                  <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </form>
               </div>
             </div>
@@ -679,7 +690,7 @@
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg></div>
         <div class="solutions-popup">
-          <h4 class="solutions-popup__title popup__title">Контрагент объявил себя банкротом?</h4>
+          <h4 class="solutions-popup__title title">Контрагент объявил себя банкротом?</h4>
           <div class="solutions-popup__row row">
             <div class="solutions-popup__col col">
               <p>Данная проблема происходит из-за того, что контрагенты чувствуют свою безнаказанность и не верят, что дело будут доводить до суда.</p>
@@ -688,7 +699,7 @@
             <div class="solutions-popup__col col">
               <div class="call-block call-block_solutions-popup">
                 <div class="call-block__text">
-                  <h4 class="call-block__title popup__title">Оставьте заявку</h4>
+                  <h4 class="call-block__title title">Оставьте заявку</h4>
                   <p>и наш специалист изучит материалы вашего дела и даст свою экспертную оценку совершенно бесплатно</p>
                 </div>
                 <form class="call-block__form js-form" action="#!" method="POST">
@@ -697,9 +708,9 @@
                   </div><button class="btn btn_ls call-block__form-submit" type="submit"><span>ОТПРАВИТЬ ЗАЯВКУ</span>
                     <div class="btn__decor"></div>
                   </button>
-                  <div class="check-box call-block__form-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" required="required" />
+                  <div class="check-box call-block__form-check js-agreement-check"><label class="check-box__label"><input class="check-box__input" type="checkbox" name="" checked="checked" />
                       <div class="check-box__visual"></div>
-                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" href="#!">политикой конфиденциальности</a></span></div>
+                    </label><span class="check-box__text">Вы соглашаетесь с условиями обработки<br />персональных данных<br />и <a class="check-box__link link-decor" data-popup-target="agree-popup" href="#!">политикой конфиденциальности</a></span></div>
                 </form>
               </div>
             </div>

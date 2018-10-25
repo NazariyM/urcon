@@ -1,5 +1,5 @@
 mixin btn(classMod, text, popup)
-	+b.BUTTON.btn(class= classMod data-popup-target= popup)&attributes(attributes)
+	+b.BUTTON.btn(class= classMod data-popup-target= popup type="button")&attributes(attributes)
 		span= text
 		+e.decor
 
